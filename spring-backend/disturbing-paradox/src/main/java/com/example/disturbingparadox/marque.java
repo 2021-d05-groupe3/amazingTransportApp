@@ -8,8 +8,9 @@ import javax.persistence.Id;
 
 @Entity
 public class Marque {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
 	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id ;
     @Column()
     String nom, pays;
