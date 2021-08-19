@@ -12,15 +12,19 @@ public class Marque {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id ;
-    @Column()
-    String nom, pays;
 
-    public Long getId() {
-        return id;
-    }
+    @Column()
+    String nom;
+    
+    @Column()
+    String pays;
 
 
     public Marque() {
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getNom() {
