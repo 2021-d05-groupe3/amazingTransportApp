@@ -18,7 +18,6 @@ public class Marque {
         return id;
     }
 
-   
 
     public Marque() {
     }
@@ -42,3 +41,4 @@ public class Marque {
     
     
 }
+
