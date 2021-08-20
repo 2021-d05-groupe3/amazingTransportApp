@@ -1,10 +1,15 @@
 package com.example.disturbingparadox.categorie;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.example.disturbingparadox.vehiculeSociete.VehiculeSociete;
 
 @Entity
 public class Categorie {
@@ -14,6 +19,9 @@ public class Categorie {
     Long id ;
     @Column()
     String libelle;
+
+    @OneToMany(mappedBy = "vehiculeSociete")//jointure 1 marque peut avoir plusieurs vehicules
+    private Set<VehiculeSociete> vehiculesSociete;
 
     
     public Categorie() {
