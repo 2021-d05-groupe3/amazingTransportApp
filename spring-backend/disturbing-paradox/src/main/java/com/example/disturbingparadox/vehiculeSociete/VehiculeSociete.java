@@ -21,7 +21,7 @@ public class VehiculeSociete {
 
     @ManyToOne// jointure plusieurs vehiculeSociete peuvent avoir 1 categorie
     @JoinColumn(name = "categorie_id")
-    private VehiculeSociete vehiculeSociete;
+    private Categorie categorie;
 
     
     public VehiculeSociete() {

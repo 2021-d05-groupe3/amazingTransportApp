@@ -25,7 +25,11 @@ public class Vehicule {
   
     @ManyToOne// jointure plusieurs vehicule peuvent avoir 1 marque
     @JoinColumn(name = "id_marque")
-    private Vehicule vehicule;
+    private Vehicule vehiculeMarque;
+
+    @ManyToOne// jointure plusieurs vehicule peuvent avoir 1 marque
+    @JoinColumn(name = "id_model")
+    private Vehicule vehiculeModel;
 
     public Vehicule() {
     }

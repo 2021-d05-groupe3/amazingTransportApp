@@ -20,7 +20,7 @@ public class Marque {
     @Column()
     String nom, pays;
 
-    @OneToMany(mappedBy = "vehicule")//jointure 1 marque peut avoir plusieurs vehicules
+    @OneToMany(mappedBy = "vehiculeMarque")//jointure 1 marque peut avoir plusieurs vehicules
     private Set<Vehicule> vehicules;
 
     
