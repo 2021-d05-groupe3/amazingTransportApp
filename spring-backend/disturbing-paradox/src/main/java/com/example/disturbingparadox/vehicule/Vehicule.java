@@ -10,13 +10,12 @@ import com.example.disturbingparadox.marque.Marque;
 
 @Entity
 public class Vehicule {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Id
     Long id ;
     @Column()
     String immatriculation;
     Marque marqueId;
-    Categorie categorieId;
     String statut;
 
     public Vehicule() {
@@ -42,14 +41,6 @@ public class Vehicule {
 
     public void setMarqueId(Marque marqueId) {
         this.marqueId = marqueId;
-    }
-
-    public Categorie getCategorieId() {
-        return categorieId;
-    }
-
-    public void setCategorieId(Categorie categorieId) {
-        this.categorieId = categorieId;
     }
 
     public String getStatut() {
