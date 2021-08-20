@@ -1,4 +1,4 @@
-package com.example.disturbingparadox;
+package com.example.disturbingparadox.marque;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,25 +1,25 @@
-package com.example.disturbingparadox;
+package com.example.disturbingparadox.vehicule;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class MarqueController {
+public class VehiculeController {
 
     @Autowired
-	MarqueService marqueService;
+	VehiculeService vehiculeService;
 
-    @GetMapping("/marque/{nom}")
-	public List<Marque>  getMarque(@PathVariable String nom) {
-		List<Marque> marques = marqueService.getMarque(nom);
+    @GetMapping("/vehicule/{nom}")
+	public List<Vehicule>  getVehicule(@PathVariable String nom) {
+		List<Vehicule> vehicules = vehiculeService.getVehicule(nom);
 
-		return marques;
+		return vehicules;
 
 
 	}
     
 }
+
