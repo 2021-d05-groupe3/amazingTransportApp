@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import com.example.disturbingparadox.vehicule.Vehicule;
 
@@ -21,6 +23,15 @@ public class AnnonceCovoiturage {
     String adresseDepart;
     String adresseArrivée;
     Vehicule vehiculeId;
+
+    @ManyToOne// jointure plusieurs annonce peuvent avoir 1 vehicule
+    @JoinColumn(name = "id_vehicule")
+    private Vehicule vehicule;
+
+
+    public AnnonceCovoiturage() {
+    }
+    
     public Long getId() {
         return id;
     }
@@ -55,8 +66,7 @@ public class AnnonceCovoiturage {
     public void setVehiculeId(Vehicule vehiculeId) {
         this.vehiculeId = vehiculeId;
     }
-    public AnnonceCovoiturage() {
-    }
+   
 
     
 

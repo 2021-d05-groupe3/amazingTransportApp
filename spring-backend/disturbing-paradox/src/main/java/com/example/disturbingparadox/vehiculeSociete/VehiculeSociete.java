@@ -9,9 +9,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.example.disturbingparadox.categorie.Categorie;
+import com.example.disturbingparadox.vehicule.Vehicule;
 
 @Entity
-public class VehiculeSociete {
+public class VehiculeSociete extends Vehicule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id ;
