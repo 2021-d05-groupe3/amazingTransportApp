@@ -1,1 +1,17 @@
-<p>covoiturage-detail works!</p>
+<div *ngIf="covoiturage">
+  <h2>
+      {{covoiturage.organizer| uppercase}}
+  </h2>
+  <h3>
+    {{covoiturage.vehicleType}}
+  </h3>
+  <p>
+    {{covoiturage.passengersNumber}}
+  </p>
+  <div><span>id: </span>{{covoiturage.id}}</div>
+  <label>
+       <input [(ngModel)]="covoiturage.id" />
+  </label>
+  <button (click)="save()">save</button>
+</div>
+
