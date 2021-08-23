@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 
 
 import com.example.disturbingparadox.marque.Marque;
+import com.example.disturbingparadox.model.Model;
 
 @Entity
 public class Vehicule {
@@ -20,7 +21,7 @@ public class Vehicule {
     @Column()
     String immatriculation;
     Marque marqueId;
-    String statut;
+    Model  modelId;
 
   
     @ManyToOne// jointure plusieurs vehicule peuvent avoir 1 marque
@@ -56,13 +57,7 @@ public class Vehicule {
         this.marqueId = marqueId;
     }
 
-    public String getStatut() {
-        return statut;
-    }
-
-    public void setStatut(String statut) {
-        this.statut = statut;
-    }
+ 
 
     
     
