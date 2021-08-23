@@ -1,4 +1,4 @@
-package com.example.disturbingparadox;
+package com.example.disturbingparadox.marque;
 
 import java.util.List;
 
