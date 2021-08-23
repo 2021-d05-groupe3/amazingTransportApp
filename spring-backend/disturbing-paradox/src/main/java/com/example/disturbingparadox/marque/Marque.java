@@ -17,22 +17,23 @@ public class Marque {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id ;
+
     @Column()
     String nom;
+    
     @Column()
     String pays;
 
+
     @OneToMany(mappedBy = "vehiculeMarque")//jointure 1 marque peut avoir plusieurs vehicules
-    private Set<Vehicule> vehicules;
-
-    
-
-    public Long getId() {
-        return id;
-    }
+    private Set<Vehicule> vehicules;    
 
 
     public Marque() {
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getNom() {
