@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import com.example.disturbingparadox.categorie.Categorie;
 import com.example.disturbingparadox.vehicule.Vehicule;
@@ -23,6 +24,9 @@ public class VehiculeSociete extends Vehicule {
     @ManyToOne// jointure plusieurs vehiculeSociete peuvent avoir 1 categorie
     @JoinColumn(name = "categorie_id")
     private Categorie categorie;
+
+    @OneToOne
+    private ReservationVehiculeEntreprise reservationVehiculeEntreprise;
 
     
     public VehiculeSociete() {
