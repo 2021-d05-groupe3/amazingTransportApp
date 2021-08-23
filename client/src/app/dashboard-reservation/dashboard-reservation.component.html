@@ -1,1 +1,13 @@
+<h2>List Covoiturages</h2>
+<div class="dashboard">
+
+    <div *ngFor="let covoiturage of covoiturages">
+        <a routerLink="/detail/{{covoiturage.id}}">
+            {{covoiturage.organizer}}
+        </a>
+        <a>
+
+        </a>
+    </div>
+</div>
 

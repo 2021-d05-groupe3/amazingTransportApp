@@ -1,3 +1,5 @@
+import { Covoiturage } from './../covoiturage';
+import { CovoiturageService } from './../services/covoiturage.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardReservationComponent implements OnInit {
 
-  constructor() { }
+covoiturages! : Covoiturage[];
+
+  constructor(private covoiturageService : CovoiturageService) { }
 
   ngOnInit(): void {
+    this.getCovoiturages();
   }
 
-
+getCovoiturages(): void {
+  this.covoiturageService.getCovoiturages().subscribe( (data) => this.covoiturages = data)
+}
 }
