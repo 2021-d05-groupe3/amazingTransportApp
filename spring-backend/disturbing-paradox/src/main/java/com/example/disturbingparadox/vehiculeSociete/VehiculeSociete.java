@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 import com.example.disturbingparadox.categorie.Categorie;
+import com.example.disturbingparadox.reservationVehiculeEntreprise.ReservationVehiculeEntreprise;
 import com.example.disturbingparadox.vehicule.Vehicule;
 
 @Entity

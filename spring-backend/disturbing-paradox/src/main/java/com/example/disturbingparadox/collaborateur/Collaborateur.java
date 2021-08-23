@@ -11,6 +11,9 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
+import com.example.disturbingparadox.reservationCovoit.ReservationCovoit;
+import com.example.disturbingparadox.reservationVehiculeEntreprise.ReservationVehiculeEntreprise;
+
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Collaborateur {
@@ -29,7 +32,7 @@ public class Collaborateur {
     private Set<ReservationCovoit> reservationsCovoits; 
 
     @OneToMany(mappedBy = "vehiculeEntreprise")//jointure 1 marque peut avoir plusieurs vehicules
-    private Set<vehiculeEntreprise> vehiculesEntreprises; 
+    private Set<ReservationVehiculeEntreprise> reservationVehiculeEntreprises; 
 
     public Collaborateur() {
     }

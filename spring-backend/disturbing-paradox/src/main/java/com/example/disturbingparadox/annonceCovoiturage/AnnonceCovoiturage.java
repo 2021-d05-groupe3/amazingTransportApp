@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.example.disturbingparadox.reservationCovoit.ReservationCovoit;
 import com.example.disturbingparadox.vehicule.Vehicule;
 
 @Entity
