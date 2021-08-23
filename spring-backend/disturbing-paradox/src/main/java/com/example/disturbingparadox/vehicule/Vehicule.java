@@ -37,7 +37,7 @@ public class Vehicule {
     @JoinColumn(name = "id_model")
     private Vehicule vehiculeModel;
 
-    @OneToMany(mappedBy = "annonceCovoiturage")//jointure 1 marque peut avoir plusieurs vehicules
+    @OneToMany(mappedBy = "vehicule")//jointure 1 marque peut avoir plusieurs vehicules
     private Set<AnnonceCovoiturage> annonceCovoiturages;
 
     @ManyToOne// jointure plusieurs vehicule peuvent avoir 1 categorie

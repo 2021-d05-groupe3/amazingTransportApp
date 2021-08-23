@@ -21,10 +21,10 @@ public class Categorie {
     @Column()
     String libelle;
 
-    @OneToMany(mappedBy = "vehiculeSociete")//jointure 1 marque peut avoir plusieurs vehicules
+    @OneToMany(mappedBy = "categorie")//jointure 1 marque peut avoir plusieurs vehicules
     private Set<VehiculeSociete> vehiculesSociete;
 
-    @OneToMany(mappedBy = "vehicule")//jointure 1 marque peut avoir plusieurs vehicules
+    @OneToMany(mappedBy = "categorie")//jointure 1 categorie peut avoir plusieurs vehicules
     private Set<Vehicule> vehicules;
 
     

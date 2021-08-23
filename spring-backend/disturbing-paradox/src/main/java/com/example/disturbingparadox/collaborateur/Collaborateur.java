@@ -28,10 +28,10 @@ public class Collaborateur {
     @Column()
     private String firstName;
 
-    @OneToMany(mappedBy = "reservationCovoit")//jointure 1 colaborateur peut avoir plusieurs reservations
+    @OneToMany(mappedBy = "collaborateur")//jointure 1 colaborateur peut avoir plusieurs reservations
     private Set<ReservationCovoit> reservationsCovoits; 
 
-    @OneToMany(mappedBy = "vehiculeEntreprise")//jointure 1 marque peut avoir plusieurs vehicules
+    @OneToMany(mappedBy = "collaborateur")//jointure 1 collaborateur peut avoir plusieurs reservations
     private Set<ReservationVehiculeEntreprise> reservationVehiculeEntreprises; 
 
     public Collaborateur() {

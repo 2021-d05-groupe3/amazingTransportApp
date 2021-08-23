@@ -28,10 +28,10 @@ public class AnnonceCovoiturage {
     Vehicule vehiculeId;
 
     @ManyToOne// jointure plusieurs annonce peuvent avoir 1 vehicule
-    @JoinColumn(name = "id_vehicule")
+    @JoinColumn(name = "vehicule_id")
     private Vehicule vehicule;
 
-    @OneToMany(mappedBy = "reservation")//jointure 1 marque peut avoir plusieurs vehicules
+    @OneToMany(mappedBy = "annonceCovoiturage")//jointure 1 marque peut avoir plusieurs vehicules
     private Set<ReservationCovoit> reservationsCovoits;
 
 
