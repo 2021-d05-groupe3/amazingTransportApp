@@ -13,8 +13,8 @@ import com.example.disturbingparadox.vehicule.Vehicule;
 
 @Entity
 public class Model {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Id
     Long id ;
     @Column()
     String nom;
