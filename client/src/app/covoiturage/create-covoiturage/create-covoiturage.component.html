@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+  <form [formGroup]="createForm" novalidate>
+
+        <div class="form-group">
+            <label>Date de départ:</label>
+            <input class="form-control" formControlName="startDate" type="text">
+        </div>
+        <div *ngIf="createForm.controls['name'].invalid && (createForm.controls['name'].dirty || createForm.controls['name'].touched)" class="alert alert-danger">
+            <div *ngIf="createForm.controls['name'].errors?.required">
+              date is required.
+            </div>
+        </div>
+         <div class="form-group">
+            <label>Heure de début:</label>
+            <input class="form-control" formControlName="startHour" type="text">
+        </div>
+        <div *ngIf="createForm.controls['heure'].invalid && (createForm.controls['heure'].dirty || createForm.controls['heure'].touched)" class="alert alert-danger">
+            <div *ngIf="createForm.controls['heure'].errors?.required">
+              heure is required.
+            </div>
+        </div>
+        <div class="form-group">
+          <label>Adresse de départ:</label>
+          <input class="form-control" formControlName="Adresse" type="text">
+      </div>
+      <div *ngIf="createForm.controls['Adresse'].invalid && (createForm.controls['Adresse'].dirty || createForm.controls['Adresse'].touched)" class="alert alert-danger">
+          <div *ngIf="createForm.controls['name'].errors?.required">
+           Adresse is required.
+          </div>
+      </div>
+        <button type="submit"
+            [disabled]="createForm.pristine || createForm.invalid" class="btn btn-success">
+            Save
+        </button>
+  </form>
+  <br />
+  <p>Form value: {{ createForm.value | json }}</p>
+  <p>Form status: {{ createForm.status | json }}</p>
+</div>

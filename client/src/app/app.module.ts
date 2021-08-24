@@ -7,21 +7,24 @@ import { AppComponent } from './app.component';
 import { DashboardReservationComponent } from './dashboard-reservation/dashboard-reservation.component';
 import { CovoituragesComponent } from './covoiturage/covoiturages/covoiturages.component';
 import { CovoiturageDetailComponent } from './covoiturage/covoiturages/covoiturage-detail/covoiturage-detail.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateCovoiturageComponent } from './covoiturage/create-covoiturage/create-covoiturage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardReservationComponent,
     CovoituragesComponent,
-    CovoiturageDetailComponent
+    CovoiturageDetailComponent,
+    CreateCovoiturageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
