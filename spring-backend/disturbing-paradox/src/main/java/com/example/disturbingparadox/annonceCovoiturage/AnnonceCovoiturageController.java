@@ -31,13 +31,13 @@ public class AnnonceCovoiturageController {
 		return annonceCovoiturageService.getAnnonces();
 	}
 
-	@PostMapping("/ajoutAnnonce")
-	public void ajouterRecette(AnnonceCovoiturage annonceCovoiturage) {
+	@PostMapping("/ajouterAnnonce")
+	public void ajouterAnnonce(AnnonceCovoiturage annonceCovoiturage) {
 		annonceCovoiturageService.addAnnonce(annonceCovoiturage);
 	}
 
-	@DeleteMapping("/suprimeAnnonce/{id}")  	
-	public String deleteAnnonce(@PathVariable("id") Long id) {
+	@DeleteMapping("/suprimerAnnonce/{id}")  	
+	public String suprimerAnnonce(@PathVariable("id") Long id) {
 		annonceCovoiturageService.deleteAnnonce(id);
 	     return"supression ok";
 	}
