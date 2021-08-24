@@ -22,6 +22,9 @@ public class Collaborateur {
     @Column()
     private String firstName;
 
+    @Column()
+    private String email;
+
     public Collaborateur() {
     }
 
@@ -43,6 +46,14 @@ public class Collaborateur {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     
