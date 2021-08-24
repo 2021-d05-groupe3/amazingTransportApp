@@ -25,10 +25,10 @@ public class AnnonceCovoiturage {
     LocalDateTime dateHDepart;
     String adresseDepart;
     String adresseArrivée;
-    Vehicule vehiculeId;
+ 
 
     @ManyToOne// jointure plusieurs annonce peuvent avoir 1 vehicule
-    @JoinColumn(name = "vehicule_id")
+    @JoinColumn(name = "VEHICULE_ID")
     private Vehicule vehicule;
 
     @OneToMany(mappedBy = "annonceCovoiturage")//jointure 1 marque peut avoir plusieurs vehicules
@@ -66,12 +66,7 @@ public class AnnonceCovoiturage {
     public void setAdresseArrivée(String adresseArrivée) {
         this.adresseArrivée = adresseArrivée;
     }
-    public Vehicule getVehiculeId() {
-        return vehiculeId;
-    }
-    public void setVehiculeId(Vehicule vehiculeId) {
-        this.vehiculeId = vehiculeId;
-    }
+  
    
 
     
