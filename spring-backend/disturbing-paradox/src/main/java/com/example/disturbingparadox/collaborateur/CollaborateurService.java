@@ -14,8 +14,22 @@ public class CollaborateurService {
     public List<Collaborateur> getCollaborateur(String name) {
 
         return collaborateurRepository.findByName(name);
-        
+
     }
 
+    public List<Collaborateur> getCollaborateurs() {
+        return collaborateurRepository.findAll();
+    }
 
+    public void addCollaborateur(Collaborateur nouveauCollaborateur) {
+        collaborateurRepository.save(nouveauCollaborateur);
+    }
+
+    public void deleteCollaborateur(Long id) {
+        for (Collaborateur c : collaborateurRepository.findAll()) {
+            if (id.equals(c.getId()))
+                collaborateurRepository.delete(c);
+        }
+
+    }
 }
