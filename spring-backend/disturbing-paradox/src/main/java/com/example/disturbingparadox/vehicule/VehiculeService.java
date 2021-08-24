@@ -1,6 +1,5 @@
 package com.example.disturbingparadox.vehicule;
-
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,9 +10,9 @@ public class VehiculeService {
     @Autowired
     VehiculeRepository vehiculeRepository;
 
-    public List<Vehicule> getVehicule(String nom) {
+    public Optional<Vehicule> getVehicule(Long id) {
 	
-		return  vehiculeRepository.findByNom(nom);
+		return  vehiculeRepository.findById(id);
         
 		
 	}

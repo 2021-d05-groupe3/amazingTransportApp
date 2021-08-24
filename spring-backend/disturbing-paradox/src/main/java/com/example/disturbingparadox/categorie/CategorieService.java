@@ -1,17 +1,19 @@
 package com.example.disturbingparadox.categorie;
 
-import java.util.List;
+
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
+@Service
 public class CategorieService {
 
     @Autowired
     CategorieRepository categorieRepository;
 
-    public List<Categorie> getCategorie(String nom) {
+    public Optional<Categorie> getCategorie(Long id) {
 
-		return  categorieRepository.findByNom(nom);
+		return  categorieRepository.findById(id);
         
 		
 	}
