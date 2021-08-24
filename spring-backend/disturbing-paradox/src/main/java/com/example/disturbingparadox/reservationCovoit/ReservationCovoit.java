@@ -7,6 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.example.disturbingparadox.annonceCovoiturage.AnnonceCovoiturage;
+import com.example.disturbingparadox.collaborateur.Collaborateur;
 
 @Entity
 public class ReservationCovoit {
@@ -20,6 +25,14 @@ public class ReservationCovoit {
 
     @Column()
     private LocalDateTime dateArrival;
+
+    @ManyToOne// jointure plusieurs annonce peuvent avoir 1 vehicule
+    @JoinColumn(name = "reservationsCovoits")
+    private AnnonceCovoiturage annonceCovoiturage;
+
+    @ManyToOne// jointure plusieurs annonces peuvent avoir 1 collaborateur
+    @JoinColumn(name = "id_collaborateur")
+    private Collaborateur collaborateur;
 
     public ReservationCovoit() {
     }

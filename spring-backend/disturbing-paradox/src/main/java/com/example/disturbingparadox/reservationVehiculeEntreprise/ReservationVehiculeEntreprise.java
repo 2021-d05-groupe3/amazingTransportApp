@@ -7,6 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+import com.example.disturbingparadox.collaborateur.Collaborateur;
+import com.example.disturbingparadox.vehiculeSociete.VehiculeSociete;
 
 @Entity
 public class ReservationVehiculeEntreprise {
@@ -23,6 +29,13 @@ public class ReservationVehiculeEntreprise {
 
     @Column
     private boolean hasDriver;
+
+    @OneToOne
+    private VehiculeSociete vehiculeSociete;
+
+    @ManyToOne// jointure plusieurs annonces peuvent avoir 1 collaborateur
+    @JoinColumn(name = "id_collaborateur")
+    private Collaborateur collaborateur;
 
     public ReservationVehiculeEntreprise() {
     }
