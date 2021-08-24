@@ -1,7 +1,7 @@
 package com.example.disturbingparadox.annonceCovoiturage;
 
-import java.util.List;
 
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,9 +11,9 @@ public class AnnonceCovoiturageService {
     @Autowired
     AnnonceCovoiturageRepository annonceCovoiturageRepository;
 
-    public List<AnnonceCovoiturage> getAnnonceCovoiturage(String nom) {
+    public Optional<AnnonceCovoiturage> getAnnonceCovoiturage(Long id) {
 
-		return  annonceCovoiturageRepository.findByNom(nom);
+		return  annonceCovoiturageRepository.findById(id);
         
 		
 	}

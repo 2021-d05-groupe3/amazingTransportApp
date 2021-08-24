@@ -1,8 +1,7 @@
 package com.example.disturbingparadox.annonceCovoiturage;
 
-import java.util.List;
 
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,11 +13,15 @@ public class AnnonceCovoiturageController {
     @Autowired
 	AnnonceCovoiturageService annonceCovoiturageService;
 
-    @GetMapping("/annonceCovoiturage/{nom}")
-    public List<AnnonceCovoiturage>  getCategorie(@PathVariable String nom) {
-		List<AnnonceCovoiturage> annonceCovoiturages = annonceCovoiturageService.getAnnonceCovoiturage(nom);
+    @GetMapping("/annonceCovoiturage/{id}")
+    public AnnonceCovoiturage  getCategorie(@PathVariable Long id) {
+		Optional<AnnonceCovoiturage> oAnnonceCovoiturage = annonceCovoiturageService.getAnnonceCovoiturage(id);
+		if(oAnnonceCovoiturage.isPresent()){
+			return oAnnonceCovoiturage.get();
+		} 
+		return null;
 
-		return annonceCovoiturages;
+		
 
 
 	}
