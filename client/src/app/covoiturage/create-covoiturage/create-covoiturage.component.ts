@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Covoiturage } from './../../covoiturage';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CovoiturageService } from 'src/app/services/covoiturage.service';
 
@@ -11,7 +12,6 @@ export class CreateCovoiturageComponent implements OnInit {
 
 title = 'Créer un covoiturage';
 
-  constructor(private fb: FormBuilder, private covoitService: CovoiturageService) { }
 
   createForm!: FormGroup;
   ngOnInit(): void {
@@ -26,5 +26,8 @@ title = 'Créer un covoiturage';
         organizer: ['', Validators.required]
     })
   }
+  @Output() newCovoiturage = new EventEmitter<Covoiturage>();
+
+  constructor(private fb: FormBuilder, private covoitService: CovoiturageService) { }
 
 }
