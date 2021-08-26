@@ -56,5 +56,12 @@ public class Collaborateur {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return "Collaborateur [email=" + email + ", firstName=" + firstName + ", id=" + id + ", name=" + name + "]";
+    }
+
+    
+
     
 }
