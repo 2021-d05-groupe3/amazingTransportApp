@@ -3,13 +3,16 @@ package com.example.disturbingparadox.collaborateur;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class CollaborateurController {
 
     @Autowired
@@ -30,8 +33,19 @@ public class CollaborateurController {
 	}
 
 	@PostMapping("/ajouterCollaborateur")
-	public void ajouterCollaborateur(Collaborateur collaborateur) {
-		collaborateurService.addCollaborateur(collaborateur);
+	public Collaborateur ajouterCollaborateur(@RequestBody CollaborateurDto collaborateur) {
+		System.out.println(collaborateur);
+		return collaborateurService.addCollaborateur(collaborateur);
+	}
+
+	@PostMapping("/collaborateur")
+	public ResponseEntity<Collaborateur> add(@RequestBody CollaborateurDto dto) {
+		System.out.println(dto);
+		Collaborateur collaborateur =  collaborateurService.addCollaborateur(dto);
+		if(collaborateur == null){
+			return new 	ResponseEntity<Collaborateur>(collaborateur,HttpStatus.BAD_REQUEST );
+		}
+		return new 	ResponseEntity<Collaborateur>(collaborateur,HttpStatus.OK );
 	}
 
 	@DeleteMapping("/suprimerCollaborateur/{id}")  	

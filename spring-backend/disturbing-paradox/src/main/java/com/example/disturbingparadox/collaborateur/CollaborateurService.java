@@ -21,8 +21,15 @@ public class CollaborateurService {
         return collaborateurRepository.findAll();
     }
 
-    public void addCollaborateur(Collaborateur nouveauCollaborateur) {
-        collaborateurRepository.save(nouveauCollaborateur);
+    public Collaborateur addCollaborateur(CollaborateurDto nouveauCollaborateur) {
+        System.out.println(nouveauCollaborateur );
+        Collaborateur user = new Collaborateur();
+        user.setName(nouveauCollaborateur.name);
+        user.setFirstName(nouveauCollaborateur.firstName);
+        user.setEmail(nouveauCollaborateur.email);
+        return collaborateurRepository.save(user);
+
+       
     }
 
     public void deleteCollaborateur(Long id) {
