@@ -16,30 +16,5 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class AnnonceCovoiturageController {
     @Autowired
 	AnnonceCovoiturageService annonceCovoiturageService;
-
-    @GetMapping("/annonceCovoiturage/{id}")
-    public AnnonceCovoiturage  getCategorie(@PathVariable Long id) {
-		Optional<AnnonceCovoiturage> oAnnonceCovoiturage = annonceCovoiturageService.getAnnonceCovoiturage(id);
-		if(oAnnonceCovoiturage.isPresent()){
-			return oAnnonceCovoiturage.get();
-		} 
-		return null;
-	}
-
-	@GetMapping("/afficherAnnonce")
-	public List<AnnonceCovoiturage> afficherLesAnnonces(){
-		return annonceCovoiturageService.getAnnonces();
-	}
-
-	@PostMapping("/ajouterAnnonce")
-	public void ajouterAnnonce(AnnonceCovoiturageDto annonceCovoiturage) {
-		annonceCovoiturageService.addAnnonce(annonceCovoiturage);
-	}
-
-	@DeleteMapping("/suprimerAnnonce/{id}")  	
-	public String suprimerAnnonce(@PathVariable("id") Long id) {
-		annonceCovoiturageService.deleteAnnonce(id);
-	     return"supression ok";
-	}
     
 }
