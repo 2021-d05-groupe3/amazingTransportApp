@@ -1,0 +1,22 @@
+[{
+  "id": 1,
+  "name": "Oui",
+  "email": "oui@oui.com",
+  "password": "ouipass",
+  "class": "user"
+},
+{
+  "id": 2,
+  "name": "Non",
+  "email": "non@non.com",
+  "password": "nonpass",
+  "class": "driver"
+},
+{
+  "id": 3,
+  "name": "Pitetre",
+  "email": "pitetre@pitetre.com",
+  "password": "pitetrepass",
+  "class": "admin"
+}
+]
