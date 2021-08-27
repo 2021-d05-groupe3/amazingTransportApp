@@ -13,9 +13,9 @@ public class CategorieController {
     @Autowired
 	CategorieService categorieService;
 
-    @GetMapping("/categorie/{nom}")
-    public List<Categorie>  getCategorie(@PathVariable String nom) {
-		List<Categorie> categories = categorieService.getCategorie(nom);
+    @GetMapping("/categorie/{libelle}")
+    public List<Categorie>  getCategorie(@PathVariable String libelle) {
+		List<Categorie> categories = categorieService.getCategorie(libelle);
 
 		return categories;
 

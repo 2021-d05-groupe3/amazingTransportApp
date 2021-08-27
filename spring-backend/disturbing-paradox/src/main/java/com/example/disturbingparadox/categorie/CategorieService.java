@@ -10,9 +10,9 @@ public class CategorieService {
     @Autowired
     CategorieRepository categorieRepository;
 
-    public List<Categorie> getCategorie(String nom) {
+    public List<Categorie> getCategorie(String libelle) {
 
-		return  categorieRepository.findByNom(nom);
+		return  categorieRepository.findByLibelle(libelle);
         
 		
 	}
