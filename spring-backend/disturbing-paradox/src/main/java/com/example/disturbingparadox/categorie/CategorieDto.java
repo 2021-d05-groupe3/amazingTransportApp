@@ -1,10 +1,10 @@
 package com.example.disturbingparadox.categorie;
 
 public class CategorieDto {
-    String libelle;
 
-    public CategorieDto() {
-    }
+   public String libelle;
+
+   
 
     public String getLibelle() {
         return libelle;
