@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateCovoiturageComponent } from './covoiturage/create-covoiturage/create-covoiturage.component';
 import { VehiculesComponent } from './vehiculeSociete/vehicules/vehicules/vehicules.component';
+import { VehiculeDetailComponent } from './vehiculeSociete/vehicule-detail/vehicule-detail.component';
+
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { VehiculesComponent } from './vehiculeSociete/vehicules/vehicules/vehicu
     CovoituragesComponent,
     CovoiturageDetailComponent,
     CreateCovoiturageComponent,
-    VehiculesComponent
+    VehiculesComponent,
+    VehiculeDetailComponent,
+
   ],
   imports: [
     BrowserModule,
