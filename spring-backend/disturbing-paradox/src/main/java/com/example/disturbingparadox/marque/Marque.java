@@ -20,8 +20,6 @@ public class Marque {
 
     @Column()
     String nom;
-    
-    @Column()
     String pays;
 
 
@@ -50,6 +48,11 @@ public class Marque {
 
     public void setPays(String pays) {
         this.pays = pays;
+    }
+
+    @Override
+    public String toString() {
+        return "Marque [id=" + id + ", nom=" + nom + ", pays=" + pays + ", vehicules=" + vehicules + "]";
     }
 
     
