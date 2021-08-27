@@ -24,8 +24,8 @@ export class RestApiService {
   }  
 
   // HttpClient API get() method => Fetch Collabs list
-  getCollabs(): Observable<Collab[]> {
-    return this.http.get<Collab[]>(this.API_URL + '/afficherCollaborateur')
+  getCollabs(): Observable<Collab> {
+    return this.http.get<Collab>(this.API_URL + '/afficherCollaborateur')
     
   }
 
