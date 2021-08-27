@@ -1,4 +1,5 @@
 
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,6 +11,8 @@ import { CovoiturageDetailComponent } from './covoiturage/covoiturages/covoitura
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateCovoiturageComponent } from './covoiturage/create-covoiturage/create-covoiturage.component';
+import { VehiculesComponent } from './vehiculeSociete/vehicules/vehicules/vehicules.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import { CreateCovoiturageComponent } from './covoiturage/create-covoiturage/cre
     DashboardReservationComponent,
     CovoituragesComponent,
     CovoiturageDetailComponent,
-    CreateCovoiturageComponent
+    CreateCovoiturageComponent,
+    VehiculesComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ import { CovoiturageService } from 'src/app/services/covoiturage.service';
 })
 export class CreateCovoiturageComponent implements OnInit {
 
-title = 'Créer un covoiturage';
+title = 'Créer une annonce de covoiturage';
 
 
   createForm!: FormGroup;

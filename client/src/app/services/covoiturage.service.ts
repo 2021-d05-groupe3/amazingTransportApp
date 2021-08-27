@@ -12,7 +12,7 @@ export class CovoiturageService {
   constructor(private http: HttpClient) { }
 
   getCovoiturages(): Observable<Covoiturage[]>{
-    return this.http.get<Covoiturage[]>("Api/coivoiturages")
+    return this.http.get<Covoiturage[]>("api/coivoiturages")
   }
 
   getCovoiturage(id: number): Observable<Covoiturage>{
