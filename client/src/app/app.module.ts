@@ -9,13 +9,18 @@ import { CovoituragesComponent } from './covoiturage/covoiturages/covoiturages.c
 import { CovoiturageDetailComponent } from './covoiturage/covoiturages/covoiturage-detail/covoiturage-detail.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CollaborateurComponent } from './collaborateur/collaborateur.component';
+import { CollaborateurListComponent } from './collaborateur-list/collaborateur-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardReservationComponent,
     CovoituragesComponent,
-    CovoiturageDetailComponent
+    CovoiturageDetailComponent,
+    CollaborateurComponent,
+    CollaborateurListComponent,
+    
   ],
   imports: [
     BrowserModule,
