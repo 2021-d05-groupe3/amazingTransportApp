@@ -26,10 +26,10 @@ public class AnnonceCovoiturageService {
   public AnnonceCovoiturage addAnnonce(AnnonceCovoiturageDto nouvelleAnonce) {
 
 	AnnonceCovoiturage annonceCovoiturage = new AnnonceCovoiturage();
-	annonceCovoiturage.setNbrDePlaceRestante(annonceCovoiturage.nbrDePlaceRestante);
-	annonceCovoiturage.setDateHDepart(annonceCovoiturage.dateHDepart);
-	annonceCovoiturage.setAdresseDepart(annonceCovoiturage.adresseDepart);
-	annonceCovoiturage.setAdresseArrivée(annonceCovoiturage.adresseArrivée);
+	annonceCovoiturage.setNbrDePlaceRestante(nouvelleAnonce.nbrDePlaceRestante);
+	annonceCovoiturage.setDateHDepart(nouvelleAnonce.dateHDepart);
+	annonceCovoiturage.setAdresseDepart(nouvelleAnonce.adresseDepart);
+	annonceCovoiturage.setAdresseArrivée(nouvelleAnonce.adresseArrivee);
 		return annonceCovoiturageRepository.save(annonceCovoiturage);
 	}
 

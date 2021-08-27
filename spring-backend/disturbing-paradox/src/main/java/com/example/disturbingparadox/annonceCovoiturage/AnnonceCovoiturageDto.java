@@ -6,7 +6,7 @@ public class AnnonceCovoiturageDto {
     int nbrDePlaceRestante;
     LocalDateTime dateHDepart;
     String adresseDepart;
-    String adresseArrivée;
+    String adresseArrivee;
 
 
     public AnnonceCovoiturageDto() {
@@ -43,19 +43,19 @@ public class AnnonceCovoiturageDto {
     }
 
 
-    public String getAdresseArrivée() {
-        return adresseArrivée;
+    public String getAdresseArrivee() {
+        return adresseArrivee;
     }
 
 
-    public void setAdresseArrivée(String adresseArrivée) {
-        this.adresseArrivée = adresseArrivée;
+    public void setAdresseArrivee(String adresseArrivee) {
+        this.adresseArrivee = adresseArrivee;
     }
 
 
     @Override
     public String toString() {
-        return "AnnonceCovoiturageDto [adresseArrivée=" + adresseArrivée + ", adresseDepart=" + adresseDepart
+        return "AnnonceCovoiturageDto [adresseArrivée=" + adresseArrivee + ", adresseDepart=" + adresseDepart
                 + ", dateHDepart=" + dateHDepart + ", nbrDePlaceRestante=" + nbrDePlaceRestante + "]";
     }
 
