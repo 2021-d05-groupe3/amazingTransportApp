@@ -23,9 +23,17 @@ public class AnnonceCovoiturageService {
 		return annonceCovoiturageRepository.findAll();
 	}
 
-  public void addAnnonce(AnnonceCovoiturage nouvelleAnonce) {
-		annonceCovoiturageRepository.save(nouvelleAnonce);
+  public AnnonceCovoiturage addAnnonce(AnnonceCovoiturageDto nouvelleAnonce) {
+
+	AnnonceCovoiturage annonceCovoiturage = new AnnonceCovoiturage();
+	annonceCovoiturage.setNbrDePlaceRestante(annonceCovoiturage.nbrDePlaceRestante);
+	annonceCovoiturage.setDateHDepart(annonceCovoiturage.dateHDepart);
+	annonceCovoiturage.setAdresseDepart(annonceCovoiturage.adresseDepart);
+	annonceCovoiturage.setAdresseArrivée(annonceCovoiturage.adresseArrivée);
+		return annonceCovoiturageRepository.save(annonceCovoiturage);
 	}
+
+	
 
   public void deleteAnnonce(Long id) {
 		for(AnnonceCovoiturage a: annonceCovoiturageRepository.findAll() ) {

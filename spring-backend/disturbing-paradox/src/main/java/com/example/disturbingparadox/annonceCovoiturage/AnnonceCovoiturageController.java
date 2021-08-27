@@ -32,7 +32,7 @@ public class AnnonceCovoiturageController {
 	}
 
 	@PostMapping("/ajouterAnnonce")
-	public void ajouterAnnonce(AnnonceCovoiturage annonceCovoiturage) {
+	public void ajouterAnnonce(AnnonceCovoiturageDto annonceCovoiturage) {
 		annonceCovoiturageService.addAnnonce(annonceCovoiturage);
 	}
 
