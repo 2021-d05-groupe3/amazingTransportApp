@@ -3,14 +3,14 @@ package com.example.disturbingparadox.collaborateur;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "https://localhost:4200")
 public class CollaborateurController {
 
     @Autowired
@@ -23,17 +23,23 @@ public class CollaborateurController {
         
     }
 
-    @GetMapping("/collaborateurs")
-    public List<Collaborateur> findAllCollaborateurs() {
+    @GetMapping("/afficherCollaborateur")
+	public List<Collaborateur> afficherLesCollaborateurs(){
+		return collaborateurService.getCollaborateurs();
+	}
 
-        return collaborateurService.findAllCollaborateurs();
-        
-    }
+	@PostMapping("/ajouterCollaborateur")
+	public Collaborateur ajouterCollaborateur(@RequestBody CollaborateurDto collaborateur) {
+		System.out.println(collaborateur);
+		return collaborateurService.addCollaborateur(collaborateur);
+	}
 
-    @PostMapping("/collaborateur/add")
-    public void addCollaborateur(String name, String firstName, String email) {
-        
-        collaborateurService.addCollaborateur(name, firstName, email);
 
-    }
+
+	@DeleteMapping("/suprimerCollaborateur/{id}")  	
+	public String supprimerCollaborateur(@PathVariable("id") Long id) {
+		collaborateurService.deleteCollaborateur(id);
+	     return"supression ok";
+	}
+    
 }

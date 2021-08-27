@@ -30,6 +30,9 @@ public class Collaborateur {
 
     @Column()
     private String email;
+
+ 
+
     @OneToMany(mappedBy = "collaborateur")//jointure 1 colaborateur peut avoir plusieurs reservations
     private Set<ReservationCovoit> reservationsCovoits; 
 
@@ -58,7 +61,6 @@ public class Collaborateur {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
     public String getEmail() {
         return email;
     }

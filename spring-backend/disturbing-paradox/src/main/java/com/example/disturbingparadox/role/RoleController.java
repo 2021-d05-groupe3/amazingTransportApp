@@ -1,6 +1,7 @@
 package com.example.disturbingparadox.role;
 
-import java.util.List;
+
+import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,11 +13,14 @@ public class RoleController {
     @Autowired
 	RoleService roleService;
 
-    @GetMapping("/vehicule/{nom}")
-	public List<Role>  getVehicule(@PathVariable String nom) {
-		List<Role> roles = roleService.getVehicule(nom);
+    @GetMapping("/role/{id}")
+	public Role  getRole(@PathVariable Long id) {
+		Optional<Role> oRole = roleService.getRole(id);
+		if(oRole.isPresent()){
+			return oRole.get();
+		}
 
-		return roles;
+		return null;
 
 
 	}

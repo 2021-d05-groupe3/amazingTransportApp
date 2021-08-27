@@ -1,6 +1,5 @@
 package com.example.disturbingparadox.vehiculeSociete;
-
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,11 +10,10 @@ public class VehiculeSocieteService {
     @Autowired
     VehiculeSocieteRepository vehiculeRepository;
 
-    public List<VehiculeSociete> getVehiculeSociete(String nom) {
+    public Optional<VehiculeSociete> getVehiculeSociete(Long id) {
 	
-		return  vehiculeRepository.findByNom(nom);
-        
-		
+		return  vehiculeRepository.findById(id);
+        	
 	}
     
 }

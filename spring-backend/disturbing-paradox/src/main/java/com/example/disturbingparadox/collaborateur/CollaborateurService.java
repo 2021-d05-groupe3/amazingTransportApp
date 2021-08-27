@@ -14,13 +14,22 @@ public class CollaborateurService {
     public List<Collaborateur> getCollaborateur(String name) {
 
         return collaborateurRepository.findByName(name);
-        
+
     }
 
-    public List<Collaborateur> findAllCollaborateurs() {
-
+    public List<Collaborateur> getCollaborateurs() {
         return collaborateurRepository.findAll();
+    }
 
+    public Collaborateur addCollaborateur(CollaborateurDto nouveauCollaborateur) {
+        System.out.println(nouveauCollaborateur );
+        Collaborateur user = new Collaborateur();
+        user.setName(nouveauCollaborateur.name);
+        user.setFirstName(nouveauCollaborateur.firstName);
+        user.setEmail(nouveauCollaborateur.email);
+        return collaborateurRepository.save(user);
+
+       
     }
 
     public String addCollaborateur(String name, String firstName, String email) {
@@ -36,5 +45,11 @@ public class CollaborateurService {
 
     }
 
+    public void deleteCollaborateur(Long id) {
+        for (Collaborateur c : collaborateurRepository.findAll()) {
+            if (id.equals(c.getId()))
+                collaborateurRepository.delete(c);
+        }
 
+    }
 }

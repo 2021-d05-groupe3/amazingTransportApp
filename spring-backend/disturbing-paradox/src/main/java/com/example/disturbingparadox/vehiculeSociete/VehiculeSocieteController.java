@@ -1,6 +1,7 @@
 package com.example.disturbingparadox.vehiculeSociete;
 
-import java.util.List;
+
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,11 +14,14 @@ public class VehiculeSocieteController {
     @Autowired
 	VehiculeSocieteService vehiculeSocieteService;
 
-    @GetMapping("/vehiculeSociete/{nom}")
-	public List<VehiculeSociete>  getVehiculeSociete(@PathVariable String nom) {
-		List<VehiculeSociete> vehiculesSociete = vehiculeSocieteService.getVehiculeSociete(nom);
+    @GetMapping("/vehiculeSociete/{id}")
+	public VehiculeSociete  getVehiculeSociete(@PathVariable Long id) {
+		Optional<VehiculeSociete> oVehiculesSociete = vehiculeSocieteService.getVehiculeSociete(id);
+		if(oVehiculesSociete.isPresent()){
+			return oVehiculesSociete.get();
+		}
 
-		return vehiculesSociete;
+		return null;
 
 
 	}
