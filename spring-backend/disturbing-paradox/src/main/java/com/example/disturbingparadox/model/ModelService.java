@@ -16,6 +16,13 @@ public class ModelService {
         
 		
 	}
+
+  public Model addModel(ModelDto nouveauModel) {
+	  Model model = new Model();
+	  model.setNom(model.nom);
+	  
+		return modelRepository.save(model);
+	}
 	
     
 }
