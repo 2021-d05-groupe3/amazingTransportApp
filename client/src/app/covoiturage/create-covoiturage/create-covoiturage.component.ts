@@ -1,4 +1,4 @@
-import { Covoiturage } from './../../covoiturage';
+import { Covoiturage } from '../../models/covoiturage';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CovoiturageService } from 'src/app/services/covoiturage.service';

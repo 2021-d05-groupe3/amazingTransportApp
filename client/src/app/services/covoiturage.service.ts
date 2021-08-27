@@ -1,4 +1,4 @@
-import { Covoiturage } from './../covoiturage';
+import { Covoiturage } from '../models/covoiturage';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';

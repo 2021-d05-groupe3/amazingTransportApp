@@ -1,4 +1,4 @@
-import { Covoiturage } from './../covoiturage';
+import { Covoiturage } from '../models/covoiturage';
 import { CovoiturageService } from './../services/covoiturage.service';
 import { Component, OnInit } from '@angular/core';
 

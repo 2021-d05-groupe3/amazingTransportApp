@@ -1,7 +1,7 @@
 import { CovoiturageService } from './../../../services/covoiturage.service';
 
 
-import { Covoiturage } from './../../../covoiturage';
+import { Covoiturage } from '../../../models/covoiturage';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
