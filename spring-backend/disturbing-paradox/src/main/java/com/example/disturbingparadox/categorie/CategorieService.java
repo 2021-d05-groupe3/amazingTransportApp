@@ -23,9 +23,13 @@ public class CategorieService {
 		return categorieRepository.findAll();
 	}
 
-  public void addCategorie(Categorie nouvelleCategorie) {
-		categorieRepository.save(nouvelleCategorie);
+  public Categorie addCategorie(CategorieDto nouvelleCategorie) {
+	  Categorie categorie = new Categorie();
+	  categorie.setLibelle(categorie.libelle);
+		return categorieRepository.save(categorie);
 	}
+
+
 
   public void deleteCategorie(Long id) {
 		for(Categorie c: categorieRepository.findAll() ) {

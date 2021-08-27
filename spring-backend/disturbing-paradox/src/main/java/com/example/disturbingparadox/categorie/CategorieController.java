@@ -32,7 +32,7 @@ return null;
 	}
 
 	@PostMapping("/ajouterCategorie")
-	public void ajouterCategorie(Categorie categorie) {
+	public void ajouterCategorie(CategorieDto categorie) {
 		categorieService.addCategorie(categorie);
 	}
 
