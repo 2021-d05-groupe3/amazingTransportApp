@@ -32,6 +32,7 @@ if(oVehicule.isPresent()){
 
 	@PostMapping("/ajoutVehicule")
 	public Vehicule ajouterVehicule(@RequestBody VehiculeDto vehicule) {
+	
 		return vehiculeService.addVehicule(vehicule);
 	}
 
