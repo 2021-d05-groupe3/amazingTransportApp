@@ -34,9 +34,9 @@ public class VehiculeSocieteController {
 		return vehiculeSocieteService.getVehiculeSocietes();
 	}
 
-	@PostMapping("/ajoutVehicule")
-	public void ajouterVehicule(VehiculeSociete vehicule) {
-		vehiculeSocieteService.addVehiculeSociete(vehicule);
+	@PostMapping("/ajoutVehiculeSociete")
+	public VehiculeSociete ajouterVehicule(VehiculeSociete vehiculeSociete) {
+		return vehiculeSocieteService.addVehiculeSociete(vehiculeSociete);
 	}
 
 	@DeleteMapping("/suprimeVehiculeSociete/{id}")  	

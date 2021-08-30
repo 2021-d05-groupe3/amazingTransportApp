@@ -21,8 +21,8 @@ public class VehiculeSocieteService {
     return vehiculeSocieteRepository.findAll();
   }
 
-  public void addVehiculeSociete(VehiculeSociete nouveauVehiculeSociete) {
-    vehiculeSocieteRepository.save(nouveauVehiculeSociete);
+  public VehiculeSociete addVehiculeSociete(VehiculeSociete nouveauVehiculeSociete) {
+   return vehiculeSocieteRepository.save(nouveauVehiculeSociete);
   }
 
   public void deleteVehiculeSociete(Long id) {

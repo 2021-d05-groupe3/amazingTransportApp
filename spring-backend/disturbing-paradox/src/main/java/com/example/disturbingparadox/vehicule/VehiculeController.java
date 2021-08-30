@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -30,9 +31,12 @@ if(oVehicule.isPresent()){
 	}
 
 	@PostMapping("/ajoutVehicule")
-	public void ajouterVehicule(Vehicule vehicule) {
-		vehiculeService.addVehicule(vehicule);
+	public Vehicule ajouterVehicule(@RequestBody VehiculeDto vehicule) {
+		return vehiculeService.addVehicule(vehicule);
 	}
+
+	
+		
 
 	@DeleteMapping("/suprimeVehicule/{id}")  	
 	public String deleteVehicule(@PathVariable("id") Long id) {

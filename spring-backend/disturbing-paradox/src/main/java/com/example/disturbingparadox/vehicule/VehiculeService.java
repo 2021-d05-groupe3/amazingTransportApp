@@ -21,9 +21,12 @@ public class VehiculeService {
 		return vehiculeRepository.findAll();
 	}
 
-  public void addVehicule(Vehicule nouveauVehicule) {
-		vehiculeRepository.save(nouveauVehicule);
+  public Vehicule addVehicule(VehiculeDto nouveauVehicule) {
+	  Vehicule vehicule = new Vehicule();
+	  vehicule.setImmatriculation(nouveauVehicule.getImmatriculation());
+		return vehiculeRepository.save(vehicule);
 	}
+
 
   public void deleteVehicule(Long id) {
 		for(Vehicule v: vehiculeRepository.findAll() ) {
