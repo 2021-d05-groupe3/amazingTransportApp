@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardReservationComponent},
   { path: 'detail/:id', component: CovoiturageDetailComponent},
   { path: 'create-covoiturage', component: CreateCovoiturageComponent},
-  { path: 'vehicules', component:VehiculesComponent}
+  { path: 'vehicules', component:VehiculesComponent},
   { path: 'dashboardcollabs', component: CollaborateurListComponent}
 ];
 
