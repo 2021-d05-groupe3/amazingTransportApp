@@ -18,8 +18,8 @@ public class VehiculeSociete extends Vehicule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id ;
+
     @Column()
-    
     String statut;
 
     @ManyToOne// jointure plusieurs vehiculeSociete peuvent avoir 1 categorie
