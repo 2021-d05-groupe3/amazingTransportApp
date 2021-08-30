@@ -1,6 +1,4 @@
 import { CovoiturageService } from './../../../services/covoiturage.service';
-
-
 import { Covoiturage } from '../../../models/covoiturage';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -20,14 +18,8 @@ export class CovoiturageDetailComponent implements OnInit {
   ngOnInit(): void {
     this.id = +!this.route.snapshot.paramMap.get('id');
     //on va chercher le covoit dont l'id correspond à l'id récupéré
-    this.getCovoiturage();
 
   }
-getCovoiturage(){
-  this.covoiturageService.getCovoiturage(this.id).subscribe((data) => this.covoiturage = data);
-}
-save(){
-  this.covoiturageService.updateCovoiturage(this.covoiturage).subscribe( () => console.log(this.covoiturage, "enregistré"))
-}
+
 
 }

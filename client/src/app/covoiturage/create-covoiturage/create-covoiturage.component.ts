@@ -28,6 +28,6 @@ title = 'Créer une annonce de covoiturage';
   }
   @Output() newCovoiturage = new EventEmitter<Covoiturage>();
 
-  constructor(private fb: FormBuilder, private covoitService: CovoiturageService) { }
+  constructor(private fb: FormBuilder, private covoiturageService: CovoiturageService) { }
 
 }
