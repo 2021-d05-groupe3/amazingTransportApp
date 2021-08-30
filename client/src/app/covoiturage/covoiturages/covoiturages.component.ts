@@ -1,34 +1,42 @@
+import { Subscription } from 'rxjs';
 import { CovoiturageService } from './../../services/covoiturage.service';
 import { Covoiturage } from '../../models/covoiturage';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 
 @Component({
   selector: 'app-covoiturages',
   templateUrl: './covoiturages.component.html',
   styleUrls: ['./covoiturages.component.css']
 })
-export class CovoituragesComponent implements OnInit {
+export class CovoituragesComponent implements OnInit, OnDestroy{
 
-  covoiturages!: Covoiturage[];
 
-  constructor(private covoiturageService: CovoiturageService) { }
+  constructor(private covoiturageService: CovoiturageService){}
+  covoiturages! : Covoiturage[];
+  @Input() id?: string;
+  @Input() covoiturage?: Covoiturage;
 
+
+  private covoiturageSubscription?: Subscription;
   ngOnInit(): void {
-    this.getCovoiturages();
+      //si on a pas reçu l'objet en entier
+      if (!this.covoiturage) {
+          if (this.id) {
+              //on va le chercher via notre service grâce à son id
+              this.covoiturageSubscription = this.covoiturageService
+                  .getById(this.id)
+                  .subscribe((covoiturage) => {
+                      this.covoiturage = covoiturage;
+                  });
+          }
+      }
+
   }
-getCovoiturages(): void{
-  this.covoiturageService.getCovoiturages().subscribe((data) => this.covoiturages = data);
-}
-addCovoiturage(covoit: Covoiturage): void {
-
-  if (!covoit) {
-    return;
-  }
-  this.covoiturageService.createCovoiturage(covoit).subscribe(
-    covoiturage => this.covoiturages.push( covoiturage) //lorsque le covoit est créé il nous revient, on l'ajoute a la liste pour mise à jour
-  );
-}
 
 
+  ngOnDestroy(): void {
+    if (this.covoiturageSubscription) {
+        this.covoiturageSubscription.unsubscribe();
+    }
 
-}
+}}

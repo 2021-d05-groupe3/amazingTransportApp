@@ -16,7 +16,7 @@ export class CovoiturageDetailComponent implements OnInit {
   constructor(private route : ActivatedRoute, private covoiturageService : CovoiturageService) { }
 
   ngOnInit(): void {
-    this.id = +!this.route.snapshot.paramMap.get('id');
+    //this.id = +!this.route.snapshot.paramMap.get('id');
     //on va chercher le covoit dont l'id correspond à l'id récupéré
 
   }
