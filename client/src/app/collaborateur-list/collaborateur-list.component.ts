@@ -17,11 +17,11 @@ export class CollaborateurListComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.loadEmployees()
+    this.loadCollabs()
   }
 
-  // Get employees list
-  loadEmployees() {
+  // Get collabs list
+  loadCollabs() {
     return this.restApi.getCollabs().subscribe((data: {}) => {
       this.Collab = data;
     })
