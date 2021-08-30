@@ -17,6 +17,13 @@ public class MarqueService {
         
 		
 	}
+
+  public Marque addCategorie(MarqueDto nouvelleCategorie) {
+	  Marque marque = new Marque();
+	  marque.setNom(marque.nom);
+	  marque.setPays(marque.pays);
+		return marqueRepository.save(marque);
+	}
 	
     
 }

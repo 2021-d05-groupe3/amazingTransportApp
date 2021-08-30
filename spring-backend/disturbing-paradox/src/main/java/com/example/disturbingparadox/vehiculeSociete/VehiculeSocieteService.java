@@ -13,8 +13,7 @@ public class VehiculeSocieteService {
     public Optional<VehiculeSociete> getVehiculeSociete(Long id) {
 	
 		return  vehiculeRepository.findById(id);
-        
-		
+        	
 	}
     
 }

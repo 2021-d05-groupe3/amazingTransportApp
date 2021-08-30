@@ -15,6 +15,8 @@ import { VehiculesComponent } from './vehiculeSociete/vehicules/vehicules/vehicu
 import { VehiculeDetailComponent } from './vehiculeSociete/vehicule-detail/vehicule-detail.component';
 
 
+import { CollaborateurComponent } from './collaborateur/collaborateur.component';
+import { CollaborateurListComponent } from './collaborateur-list/collaborateur-list.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,9 @@ import { VehiculeDetailComponent } from './vehiculeSociete/vehicule-detail/vehic
     VehiculesComponent,
     VehiculeDetailComponent,
 
+    CollaborateurComponent,
+    CollaborateurListComponent,
+    
   ],
   imports: [
     BrowserModule,

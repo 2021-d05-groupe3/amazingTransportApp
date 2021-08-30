@@ -1,6 +1,7 @@
 package com.example.disturbingparadox.annonceCovoiturage;
 
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +13,18 @@ public class AnnonceCovoiturageService {
     AnnonceCovoiturageRepository annonceCovoiturageRepository;
 
     public Optional<AnnonceCovoiturage> getAnnonceCovoiturage(Long id) {
+        return null;
+    }
 
-		return  annonceCovoiturageRepository.findById(id);
-        
-		
-	}
+    public List<AnnonceCovoiturage> getAnnonces() {
+        return null;
+    }
+
+    public void addAnnonce(AnnonceCovoiturageDto annonceCovoiturage) {
+    }
+
+    public void deleteAnnonce(Long id) {
+    }
+
+    
 }  
