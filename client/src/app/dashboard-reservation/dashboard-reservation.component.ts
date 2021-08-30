@@ -13,7 +13,7 @@ import { FormControl } from '@angular/forms';
 export class DashboardReservationComponent implements OnInit, OnDestroy {
 
   constructor(private covoiturageService: CovoiturageService){}
-
+  covoiturages! : Covoiturage[];
   @Input() id?: string;
   @Input() covoiturage?: Covoiturage;
 
@@ -31,13 +31,18 @@ export class DashboardReservationComponent implements OnInit, OnDestroy {
                   });
           }
       }
+
   }
+
 
   ngOnDestroy(): void {
     if (this.covoiturageSubscription) {
         this.covoiturageSubscription.unsubscribe();
     }
+
 }
+
+
 
 //on prépare un tableau liant un covoiturage et un mode d'édition
 /**public covoiturage: { covoiturage:Covoiturage; editMode: boolean }[] = [];
