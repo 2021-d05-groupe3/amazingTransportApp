@@ -1,4 +1,4 @@
-import { Covoiturage } from './../../covoiturage';
+import { Covoiturage } from '../../models/covoiturage';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CovoiturageService } from 'src/app/services/covoiturage.service';
@@ -28,6 +28,6 @@ title = 'Créer une annonce de covoiturage';
   }
   @Output() newCovoiturage = new EventEmitter<Covoiturage>();
 
-  constructor(private fb: FormBuilder, private covoitService: CovoiturageService) { }
+  constructor(private fb: FormBuilder, private covoiturageService: CovoiturageService) { }
 
 }

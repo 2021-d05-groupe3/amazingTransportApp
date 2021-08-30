@@ -1,4 +1,5 @@
-export interface Categorie {
+import { Ressource } from './ressource';
+export interface Categorie extends Ressource {
   microUrbaine: string;
   miniCitadine: string;
   citadinePolyvalante: string;
