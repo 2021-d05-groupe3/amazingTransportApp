@@ -21,8 +21,10 @@ public class VehiculeSocieteService {
     return vehiculeSocieteRepository.findAll();
   }
 
-  public VehiculeSociete addVehiculeSociete(VehiculeSociete nouveauVehiculeSociete) {
-   return vehiculeSocieteRepository.save(nouveauVehiculeSociete);
+  public VehiculeSociete addVehiculeSociete(VehiculeSocieteDto nouveauVehiculeSociete) {
+    VehiculeSociete vehiculeSociete = new VehiculeSociete();
+    vehiculeSociete.setStatut(nouveauVehiculeSociete.getStatut());
+   return vehiculeSocieteRepository.save(vehiculeSociete);
   }
 
   public void deleteVehiculeSociete(Long id) {

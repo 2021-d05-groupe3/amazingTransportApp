@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -35,7 +36,7 @@ public class VehiculeSocieteController {
 	}
 
 	@PostMapping("/ajoutVehiculeSociete")
-	public VehiculeSociete ajouterVehicule(VehiculeSociete vehiculeSociete) {
+	public VehiculeSociete ajouterVehicule(@RequestBody VehiculeSocieteDto vehiculeSociete) {
 		return vehiculeSocieteService.addVehiculeSociete(vehiculeSociete);
 	}
 
