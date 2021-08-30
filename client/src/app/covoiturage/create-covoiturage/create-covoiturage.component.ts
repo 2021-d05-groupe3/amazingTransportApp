@@ -1,5 +1,6 @@
+import { Subscription } from 'rxjs';
 import { Covoiturage } from '../../models/covoiturage';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CovoiturageService } from 'src/app/services/covoiturage.service';
 
@@ -8,12 +9,14 @@ import { CovoiturageService } from 'src/app/services/covoiturage.service';
   templateUrl: './create-covoiturage.component.html',
   styleUrls: ['./create-covoiturage.component.css']
 })
-export class CreateCovoiturageComponent implements OnInit {
+export class CreateCovoiturageComponent implements OnInit, OnDestroy  {
 
-title = 'Créer une annonce de covoiturage';
-
+  title = 'Créer une annonce de covoiturage';
 
   createForm!: FormGroup;
+
+  private createcovoiturageSubscription?: Subscription;
+
   ngOnInit(): void {
     this.createForm = this.fb.group(
       {
@@ -29,5 +32,11 @@ title = 'Créer une annonce de covoiturage';
   @Output() newCovoiturage = new EventEmitter<Covoiturage>();
 
   constructor(private fb: FormBuilder, private covoiturageService: CovoiturageService) { }
+
+  ngOnDestroy(): void {
+    if (this.createcovoiturageSubscription) {
+        this.createcovoiturageSubscription.unsubscribe();
+    }
+  }
 
 }
