@@ -1,5 +1,6 @@
 //interface pour organiser les donnée de mon covoiturage
 import { Time } from "@angular/common";
+import { Vehicule } from "./vehicule";
 
 export interface Covoiturage {
   id: number;
@@ -8,6 +9,6 @@ export interface Covoiturage {
   startAdress: string;
   finishAdress: number;
   passengersNumber:number;
-  vehicleType: string;
+  vehicleType: Vehicule;
   organizer: string;
 }

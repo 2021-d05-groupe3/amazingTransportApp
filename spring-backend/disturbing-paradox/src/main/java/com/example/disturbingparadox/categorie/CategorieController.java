@@ -1,6 +1,6 @@
 package com.example.disturbingparadox.categorie;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,11 +13,14 @@ public class CategorieController {
     @Autowired
 	CategorieService categorieService;
 
-    @GetMapping("/categorie/{nom}")
-    public List<Categorie>  getCategorie(@PathVariable String nom) {
-		List<Categorie> categories = categorieService.getCategorie(nom);
-
-		return categories;
+    @GetMapping("/categorie/{id}")
+    public Categorie  getCategorie(@PathVariable Long id) {
+		Optional<Categorie> oCategorie = categorieService.getCategorie(id);
+if(oCategorie.isPresent()){
+	return oCategorie.get();
+}
+return null;
+		
 
 
 	}
