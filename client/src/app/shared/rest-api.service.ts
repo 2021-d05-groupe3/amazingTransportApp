@@ -30,10 +30,18 @@ export class RestApiService {
   }
 
   // HttpClient API get() method => Fetch Collab
+  getCollab(name: string): Observable<Collab> {
+    return this.http.get<Collab>(this.API_URL + '/collaborateur/' + name)
+  }
 
   // HttpClient API post() method => Create Collab  
+  addCollab(collab: Collab): Observable<Collab> {
+    return this.http.post<Collab>(this.API_URL + '/ajouterCollaborateur', JSON.stringify(collab), this.httpOptions)
+  }
 
   // HttpClient API put() method => Update Collab
+
+  // HttpClient API delete() method => Delete Collab
   
 
 }
