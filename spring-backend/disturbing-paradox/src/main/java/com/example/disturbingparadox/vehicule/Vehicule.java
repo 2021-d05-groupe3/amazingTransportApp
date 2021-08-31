@@ -19,6 +19,9 @@ import com.example.disturbingparadox.categorie.Categorie;
 import com.example.disturbingparadox.marque.Marque;
 import com.example.disturbingparadox.model.Model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 
 @Entity
 @Inheritance(strategy= InheritanceType.JOINED)
@@ -33,10 +36,12 @@ public class Vehicule {
   
     @ManyToOne// jointure plusieurs vehicule peuvent avoir 1 marque
     @JoinColumn(name = "id_marque")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Marque vehiculeMarque;
 
     @ManyToOne// jointure plusieurs vehicule peuvent avoir 1 marque
     @JoinColumn(name = "id_model")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Model vehiculeModel;
 
     @OneToMany(mappedBy = "vehicule")//jointure 1 marque peut avoir plusieurs vehicules
@@ -44,6 +49,7 @@ public class Vehicule {
 
     @ManyToOne// jointure plusieurs vehicule peuvent avoir 1 categorie
     @JoinColumn(name = "id_categorie")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Categorie categorie;
 
     public Vehicule() {

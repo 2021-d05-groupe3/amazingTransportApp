@@ -56,10 +56,13 @@ public class VehiculeService {
 
 
   public void deleteVehicule(Long id) {
-		for(Vehicule v: vehiculeRepository.findAll() ) {
-			if(id.equals(v.getId()))
-      vehiculeRepository.delete(v);
+		Optional<Vehicule> oVehicule = vehiculeRepository.findById(id);
+		if(oVehicule.isPresent()){
+			vehiculeRepository.delete(oVehicule.get());
 		}
+			
+      
+		
 	}
     
 }
