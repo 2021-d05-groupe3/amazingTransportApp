@@ -3,18 +3,18 @@ Détails
 </h1>
 <div *ngIf="covoiturage">
   <h2>
-      {{covoiturage.organizer| uppercase}}
+      Organisateur: {{covoiturage.organizer| uppercase}}
   </h2>
   <h3>
-    {{covoiturage.vehicleType}}
+    Vehicule: {{covoiturage.vehicleType}}
   </h3>
   <p>
-    {{covoiturage.passengersNumber}}
+    Nombre de passagers: {{covoiturage.passengersNumber}}
   </p>
   <div><span>id: </span>{{covoiturage.id}}</div>
   <label>
        <input [(ngModel)]="covoiturage.id" />
   </label>
-  <button (click)="save()">save</button>
+
 </div>
 
