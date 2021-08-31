@@ -1,1 +1,37 @@
-<h2>Les covoiturages !</h2>
+<div class="container custom-container-2">
+
+    <!-- Show it when there is no covoit -->
+    <div class="no-data text-center" *ngIf="covoiturages.length == 0">
+      <p>There is no covoit added yet!</p>
+    </div>
+  
+    <!-- Covoits list table, it hides when there is no covoit -->
+    <div *ngIf="covoiturages.length !== 0">
+      <h3 class="mb-3 text-center">covoits List</h3>
+  
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Départ</th>
+              <th scope="col">Arrivée</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let covoit of covoiturages">
+              <td>{{covoit.id}}</td>
+              <td>{{covoit.dateDeparture}}</td>
+              <td>{{covoit.dateArrival}}</td>
+              <td>
+                <span class="edit" routerLink="/">Edit</span>
+                <span class="delete">Delete</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  
+  </div>
