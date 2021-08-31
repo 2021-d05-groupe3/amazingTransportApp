@@ -9,7 +9,7 @@ import { RestApiService } from '../shared/rest-api.service';
 })
 export class CollaborateurListComponent implements OnInit {
 
-  Collab: any = [];
+  collabTable: any = [];
 
   constructor(
     public restApi: RestApiService
@@ -23,7 +23,7 @@ export class CollaborateurListComponent implements OnInit {
   // Get collabs list
   loadCollabs() {
     return this.restApi.getCollabs().subscribe((data: {}) => {
-      this.Collab = data;
+      this.collabTable = data;
     })
   }
 }

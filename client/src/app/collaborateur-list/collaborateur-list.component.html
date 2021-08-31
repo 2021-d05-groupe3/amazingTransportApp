@@ -1,13 +1,13 @@
 <div class="container custom-container-2">
 
     <!-- Show it when there is no collab -->
-    <div class="no-data text-center" *ngIf="Collab.length == 0">
+    <div class="no-data text-center" *ngIf="collabTable.length == 0">
       <p>There is no collaborateur added yet!</p>
-      <button class="btn btn-outline-dark" routerLink="/create-collab">Add Empoyee</button>
+      <button class="btn btn-outline-dark" routerLink="/create-collab">Add Collab</button>
     </div>
   
     <!-- Collabs list table, it hides when there is no collab -->
-    <div *ngIf="Collab.length !== 0">
+    <div *ngIf="collabTable.length !== 0">
       <h3 class="mb-3 text-center">collabs List</h3>
   
       <div class="col-md-12">
@@ -21,7 +21,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let collab of Collab">
+            <tr *ngFor="let collab of collabTable">
               <td>{{collab.id}}</td>
               <td>{{collab.name}}</td>
               <td>{{collab.email}}</td>
