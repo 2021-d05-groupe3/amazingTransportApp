@@ -27,7 +27,7 @@ public class AnnonceCovoiturageController {
 		return null;
 	}
 
-	@GetMapping("/annonce")
+	@GetMapping("/annonces")
 	public List<AnnonceCovoiturage> afficherLesAnnonces(){
 		return annonceCovoiturageService.getAnnonces();
 	}
