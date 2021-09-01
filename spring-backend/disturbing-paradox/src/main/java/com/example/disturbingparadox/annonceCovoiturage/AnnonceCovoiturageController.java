@@ -27,17 +27,17 @@ public class AnnonceCovoiturageController {
 		return null;
 	}
 
-	@GetMapping("/create-covoiturage")
+	@GetMapping("/annonce_covoiturages")
 	public List<AnnonceCovoiturage> afficherLesAnnonces(){
 		return annonceCovoiturageService.getAnnonces();
 	}
 
-	@PostMapping("/create-covoiturage")
+	@PostMapping("/annonce_covoiturage")
 	public void ajouterAnnonce(@RequestBody AnnonceCovoiturageDto annonceCovoiturage) {
 		annonceCovoiturageService.addAnnonce(annonceCovoiturage);
 	}
 
-	@DeleteMapping("/annonce/{id}")  	
+	@DeleteMapping("/annonce_covoiturage/{id}")  	
 	public String suprimerAnnonce(@PathVariable("id") Long id) {
 		annonceCovoiturageService.deleteAnnonce(id);
 	     return"supression ok";
