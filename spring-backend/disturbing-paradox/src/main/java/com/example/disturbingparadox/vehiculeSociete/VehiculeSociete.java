@@ -1,5 +1,8 @@
 package com.example.disturbingparadox.vehiculeSociete;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
+
 
 import com.example.disturbingparadox.categorie.Categorie;
 import com.example.disturbingparadox.reservationVehiculeEntreprise.ReservationVehiculeEntreprise;
@@ -26,8 +30,10 @@ public class VehiculeSociete extends Vehicule {
     @JoinColumn(name = "categorie_id")
     private Categorie categorie;
 
-    @OneToOne
-    private ReservationVehiculeEntreprise reservationVehiculeEntreprise;
+  
+
+    @OneToMany(mappedBy = "vehiculeSociete", cascade = CascadeType.ALL)//jointure 1 marque peut avoir plusieurs vehicules
+    private Set<ReservationVehiculeEntreprise> reservationVehiculeEntreprises;
 
     
     public VehiculeSociete() {
@@ -40,8 +46,48 @@ public class VehiculeSociete extends Vehicule {
 
 
 
+    public Categorie getCategorie() {
+        return categorie;
+    }
+
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
+    }
+
+
+  
+
+
+    public Set<ReservationVehiculeEntreprise> getReservationVehiculeEntreprises() {
+        return reservationVehiculeEntreprises;
+    }
+
+
+    public void setReservationVehiculeEntreprises(Set<ReservationVehiculeEntreprise> reservationVehiculeEntreprises) {
+        this.reservationVehiculeEntreprises = reservationVehiculeEntreprises;
+    }
+
+
     public String getStatut() {
         return statut;
+    }
+
+    
+
+
+ 
+
+
+    @Override
+    public String toString() {
+        return "VehiculeSociete [categorie=" + categorie + ", id=" + id + ", reservationVehiculeEntreprises="
+                + reservationVehiculeEntreprises + ", statut=" + statut + "]";
     }
 
 

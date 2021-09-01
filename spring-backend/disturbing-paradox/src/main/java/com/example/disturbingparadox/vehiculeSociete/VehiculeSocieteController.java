@@ -36,7 +36,8 @@ public class VehiculeSocieteController {
 	}
 
 	@PostMapping("/ajoutVehiculeSociete")
-	public VehiculeSociete ajouterVehicule(@RequestBody VehiculeSocieteDto vehiculeSociete) {
+	public VehiculeSocieteDto ajouterVehicule(@RequestBody VehiculeSocieteDto vehiculeSociete) {
+
 		return vehiculeSocieteService.addVehiculeSociete(vehiculeSociete);
 	}
 
