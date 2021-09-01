@@ -14,6 +14,7 @@ import { VehiculeDetailComponent } from './vehiculeSociete/vehicule-detail/vehic
 import { CollaborateurComponent } from './collaborateur/collaborateur.component';
 import { CollaborateurListComponent } from './collaborateur-list/collaborateur-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { VerifComponent } from './verif/verif.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +26,9 @@ import { AppRoutingModule } from './app-routing.module';
     CreateCovoiturageComponent,
     VehiculesComponent,
     VehiculeDetailComponent,
-
     CollaborateurComponent,
-    CollaborateurListComponent
+    CollaborateurListComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -38,7 +39,8 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [VerifComponent],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

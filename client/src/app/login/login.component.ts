@@ -7,8 +7,6 @@ import { RouterModule, Routes, Router} from '@angular/router';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-
-
   template: `<button (click)="compare()">Login</button> {{clickMessage}}`
 })
 
@@ -60,7 +58,7 @@ export class LoginComponent implements OnInit {
       //Routing here
     }
 
-      else{console.log("Le mot de passe de correspond pas à l'email.");} //If the email & the password don't match the same user
+      else{console.log("Le mot de passe ne correspond pas à l'email.");} //If the email & the password don't match the same user
 
   }
 }

@@ -1,31 +1,13 @@
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <img
-    width="40"
-    alt="Car Logo"
-    src="https://static.thenounproject.com/png/72-200.png"
-  />
-  <span>AmazingTransportApp</span>
-    <div class="spacer"></div>
-    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-      <img alt="Qries" src="https://image.flaticon.com/icons/png/512/66/66788.png"
-      width="40" height="40">
-   </a>
-    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-      <img alt="Qries" src="https://image.flaticon.com/icons/png/512/66/66788.png"
-      width="40" height="40">
-   </a>
-</div>
-
 <div class="login">
   <div class="card card-container">
-
     <img
       id="profile-img"
       src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-      class="profile-img-card"
+      class="profilepic"
+      height= 200px;
+      width="200"
     />
-    <form  name="form">
+    <form  name="form"> <!-- Mail input -->
       <div class="form-group">
         <label for="mail">E-mail</label>
         <input
@@ -35,7 +17,7 @@
           name="mail"
           required
         />
-      </div>
+      </div>            <!-- Password input -->
       <div class="form-group">
         <label for="password">Password</label>
         <input
@@ -48,8 +30,8 @@
         />
 
       </div>
-      <div class="form-group">
-        <button (click)="onClick()" class="btn btn-primary btn-block" >
+      <div class="form-group">    <!-- Login button > Calls "onClick()" method" -->
+        <button (click)="onClick()" class="btn btn-primary btn-block" routerLink="/vide">
           Login
         </button>
       </div>
