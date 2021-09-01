@@ -18,18 +18,18 @@ export class LoginComponent implements OnInit {
   j = 0;  //Increment for password
   iMail = -1; //Stores which user matches the mail
   jPass = -2; //Stores which user matches the password
-  isValid:boolean = false;  //True = Move to next page | Only true if iMail == jPass
+  //isValid:boolean = false;  //True = Move to next page, only true if iMail == jPass || DEPRICATED, NOW USING LOGGER.SERVICE
   ;
 
   constructor(private httpClient: HttpClient, private router : Router, private log : LoggerService){}
   ngOnInit(){
     this.httpClient.get("assets/users.json").subscribe(users =>{console.log("Database accessed"); //Accesses the json database | console.log(users); to display the json DB
-      this.products = users; //products stores the json database
+      this.products = users; //products stores the json database in a table
     })
   }
 
+  onClick(){ //When the login button is clicked
 
-  onClick(){ //When the button is clicked
     var val = (document.getElementById('lemail')as HTMLInputElement).value; //Receives input from the HTML email field
 
     for(this.i=0; this.i< this.products.length; this.i++) //For each user in database
@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
       }
 
     var val2 = (document.getElementById('lepass')as HTMLInputElement).value; //Receives input from the HTML password field
+
     for(this.j=0; this.j< this.products.length; this.j++) //For each user in database
       if (this.products[this.j].password == val2) //If input password matches a user's password in database
       {
@@ -51,18 +52,22 @@ export class LoginComponent implements OnInit {
       else{console.log("-> no result"); //for test purpose
       }
 
-      //console.log(this.iMail); console.log(this.jPass);  //Checks iMail's value & jPass's value
       console.log("Comparing Email with Password...");  //Makes the console easier to understand
 
-      if (this.iMail == this.jPass){  //If the email & the password both match the same user // Note: this.isValid = true;
-        //Now we send the user's data to logger.service
-      this.log.isLogged = true;
+      if (this.iMail == this.jPass){  //If the email & the password both match the same user
+      //this.isValid = true; // DEPRICATED, NOW USING LOGGER.SERVICE
+
+      //Now we send the user's data to logger.service
       this.log.mail = this.products[this.jPass].email;
       this.log.name = this.products[this.jPass].name;
       this.log.type = this.products[this.jPass].class;
-
-      console.log("Succés. Vous êtes un utilisateur classé: " + this.products[this.jPass].class);  //Success + displays user's class | this.products[this.jPass].class = to catch user's class
-      this.router.navigateByUrl("/vide"); //Allows navigation to next page using its URL (/dashboard in this case)
+      if (this.log.mail !== "0" && this.log.name !== "0" && this.log.type !=="0") //Security to make sure an user is fully logged in
+      {
+        this.log.isLogged = true;
+        console.log("Succés. Vous êtes un utilisateur classé: " + this.products[this.jPass].class);  //Success + displays user's class
+        this.router.navigateByUrl("/vide"); //Allows navigation to next page using its URL (/dashboard in this case)
+      }
+      else {this.log.logoutUser(); console.log("Une erreur s'est produite.")} //Reset data if the user isn't fully logged in
     }
 
       else{console.log("Le mot de passe ne correspond pas à l'email.");} //If the email & the password don't match the same user

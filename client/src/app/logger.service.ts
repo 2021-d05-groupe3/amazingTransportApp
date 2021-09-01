@@ -8,16 +8,16 @@ export class LoggerService {
 
   constructor(private router : Router) { }
 
-  isLogged:boolean = false;
-  name:string = "0";
-  mail:string = "0";
-  type:string = "0";
+  isLogged:boolean = false; //False by default, changes to True when logging in
+  name:string = "0";  //Name
+  mail:string = "0";  //Email
+  type:string = "0";  //User, Driver, or Admin
 
 
-  loggedUser(){
+  loggedUser(){ //Function to display data about the user (name, mail & type)
     console.log("Name: " + this.name + " | Mail: " + this.mail + " | Type: " + this.type + "| Logged=" + this.isLogged);
   }
-  logoutUser(){
+  logoutUser(){ //Function to logout: Resets values to "0" and route to login page
     this.isLogged = false;
     this.mail = "0";
     this.name = "0";

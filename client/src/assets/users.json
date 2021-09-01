@@ -17,6 +17,13 @@
   "name": "Pitetre",
   "email": "pitetre@pitetre.com",
   "password": "pitetrepass",
-  "class": "admin" 
+  "class": "admin"
+},
+{
+  "id": 4,
+  "name": "Error",
+  "email": "error@error.com",
+  "password": "errorpass",
+  "class": "0"
 }
 ]
