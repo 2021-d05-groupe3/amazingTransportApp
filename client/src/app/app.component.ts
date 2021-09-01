@@ -8,7 +8,5 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'Angular Example';
-  }
-
-
+  title = 'Client Amazing Transport';
+}

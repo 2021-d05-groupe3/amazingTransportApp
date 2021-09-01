@@ -1,25 +1,42 @@
+import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { PagevideComponent } from './pagevide/pagevide.component';
-
-
+import { DashboardReservationComponent } from './dashboard-reservation/dashboard-reservation.component';
+import { CovoituragesComponent } from './covoiturage/covoiturages/covoiturages.component';
+import { CovoiturageDetailComponent } from './covoiturage/covoiturages/covoiturage-detail/covoiturage-detail.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateCovoiturageComponent } from './covoiturage/create-covoiturage/create-covoiturage.component';
+import { VehiculesComponent } from './vehiculeSociete/vehicules/vehicules/vehicules.component';
+import { VehiculeDetailComponent } from './vehiculeSociete/vehicule-detail/vehicule-detail.component';
+import { CollaborateurComponent } from './collaborateur/collaborateur.component';
+import { CollaborateurListComponent } from './collaborateur-list/collaborateur-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PagevideComponent
+    DashboardReservationComponent,
+    CovoituragesComponent,
+    CovoiturageDetailComponent,
+    CreateCovoiturageComponent,
+    VehiculesComponent,
+    VehiculeDetailComponent,
+
+    CollaborateurComponent,
+    CollaborateurListComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule
-    //Ajouter ici le module Route
+    RouterModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
