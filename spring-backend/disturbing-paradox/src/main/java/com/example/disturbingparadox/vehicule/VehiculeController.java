@@ -25,12 +25,12 @@ if(oVehicule.isPresent()){
 		return null;
 	}
 
-	@GetMapping("/afficherVehicules")
+	@GetMapping("/Vehicules")
 	public List<Vehicule> afficherLesVehicules(){
 		return vehiculeService.getVehicules();
 	}
 
-	@PostMapping("/ajoutVehicule")
+	@PostMapping("/Vehicule")
 	public Vehicule ajouterVehicule(@RequestBody VehiculeDto vehicule) {
 	
 		return vehiculeService.addVehicule(vehicule);
@@ -39,7 +39,7 @@ if(oVehicule.isPresent()){
 	
 		
 
-	@DeleteMapping("/suprimeVehicule/{id}")  	
+	@DeleteMapping("/Vehicule/{id}")  	
 	public String deleteVehicule(@PathVariable("id") Long id) {
 		vehiculeService.deleteVehicule(id);
 	     return"supression ok";
