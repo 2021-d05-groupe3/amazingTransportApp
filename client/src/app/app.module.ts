@@ -17,6 +17,7 @@ import { VehiculeDetailComponent } from './vehiculeSociete/vehicule-detail/vehic
 
 import { CollaborateurComponent } from './collaborateur/collaborateur.component';
 import { CollaborateurListComponent } from './collaborateur-list/collaborateur-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CollaborateurListComponent } from './collaborateur-list/collaborateur-l
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

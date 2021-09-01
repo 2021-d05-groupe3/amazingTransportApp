@@ -12,7 +12,7 @@ export class CollaborateurListComponent implements OnInit {
   collabTable: any = [];
 
   constructor(
-    public restApi: RestApiService
+    private restApi: RestApiService
   ) { }
 
   ngOnInit(): void {
