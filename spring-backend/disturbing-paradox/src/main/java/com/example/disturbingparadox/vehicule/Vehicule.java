@@ -15,7 +15,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.example.disturbingparadox.annonceCovoiturage.AnnonceCovoiturage;
-import com.example.disturbingparadox.categorie.Categorie;
 import com.example.disturbingparadox.marque.Marque;
 import com.example.disturbingparadox.model.Model;
 
@@ -41,16 +40,12 @@ public class Vehicule {
 
     @ManyToOne// jointure plusieurs vehicule peuvent avoir 1 marque
     @JoinColumn(name = "id_model")
-    @OnDelete(action = OnDeleteAction.CASCADE)
     private Model vehiculeModel;
 
     @OneToMany(mappedBy = "vehicule")//jointure 1 marque peut avoir plusieurs vehicules
     private Set<AnnonceCovoiturage> annonceCovoiturages;
 
-    @ManyToOne// jointure plusieurs vehicule peuvent avoir 1 categorie
-    @JoinColumn(name = "id_categorie")
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Categorie categorie;
+
 
     public Vehicule() {
     }
@@ -83,13 +78,9 @@ public class Vehicule {
         this.annonceCovoiturages = annonceCovoiturages;
     }
 
-    public Categorie getCategorie() {
-        return categorie;
-    }
+  
 
-    public void setCategorie(Categorie categorie) {
-        this.categorie = categorie;
-    }
+  
 
     public String getImmatriculation() {
         return immatriculation;

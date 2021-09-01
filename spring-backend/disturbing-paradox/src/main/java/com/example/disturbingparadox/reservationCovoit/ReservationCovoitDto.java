@@ -6,6 +6,8 @@ public class ReservationCovoitDto {
 
     private LocalDateTime dateDeparture;
     private LocalDateTime dateArrival;
+    Long idCollaborateur;
+    Long idAnnonce;
 
     
     public LocalDateTime getDateDeparture() {
