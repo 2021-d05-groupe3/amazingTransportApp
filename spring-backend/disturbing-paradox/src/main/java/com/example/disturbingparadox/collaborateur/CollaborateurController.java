@@ -25,12 +25,12 @@ public class CollaborateurController {
         
     }
 
-    @GetMapping("/afficherCollaborateur")
+    @GetMapping("/Collaborateur")
 	public List<Collaborateur> afficherLesCollaborateurs(){
 		return collaborateurService.getCollaborateurs();
 	}
 
-	@PostMapping("/ajouterCollaborateur")
+	@PostMapping("/Collaborateur")
 	public Collaborateur ajouterCollaborateur(@RequestBody CollaborateurDto collaborateur) {
 		System.out.println(collaborateur);
 		return collaborateurService.addCollaborateur(collaborateur);
@@ -38,7 +38,7 @@ public class CollaborateurController {
 
 
 
-	@DeleteMapping("/suprimerCollaborateur/{id}")  	
+	@DeleteMapping("/Collaborateur/{id}")  	
 	public String supprimerCollaborateur(@PathVariable("id") Long id) {
 		collaborateurService.deleteCollaborateur(id);
 	     return"supression ok";
