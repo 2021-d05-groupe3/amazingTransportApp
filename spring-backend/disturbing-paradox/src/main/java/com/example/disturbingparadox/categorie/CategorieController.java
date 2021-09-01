@@ -27,7 +27,7 @@ return null;
 		
 	}
 
-	@GetMapping("/afficherCategorie")
+	@GetMapping("/categorie")
 	public List<Categorie> afficherLesCategories(){
 		return categorieService.getCategories();
 	}
@@ -38,7 +38,7 @@ return null;
 		return categorieService.addCategorie(categorie);
 	}
 
-	@DeleteMapping("/suprimeCategorie/{id}")  	
+	@DeleteMapping("/categorie/{id}")  	
 	public String supprimeCategorie(@PathVariable("id") Long id) {
 		categorieService.deleteCategorie(id);
 	     return"supression ok";
