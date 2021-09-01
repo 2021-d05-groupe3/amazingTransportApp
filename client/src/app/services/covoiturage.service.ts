@@ -7,10 +7,15 @@ import { RessourceService } from './ressource.service';
   providedIn: 'root'
 })
 export class CovoiturageService extends RessourceService<Covoiturage> {
+  endPoint(): string {
+    return 'covoiturage';
+  }
 
 
   constructor( http: HttpClient) {
-    super(http, 'covoiturage')
+    super(http)
    }
+
+  
 
 }
