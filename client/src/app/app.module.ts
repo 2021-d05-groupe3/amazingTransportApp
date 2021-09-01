@@ -27,9 +27,9 @@ import { CollaborateurListComponent } from './collaborateur-list/collaborateur-l
     CreateCovoiturageComponent,
     VehiculesComponent,
     VehiculeDetailComponent,
-
     CollaborateurComponent,
-    CollaborateurListComponent,
+    CollaborateurListComponent
+    
     
   ],
   imports: [
