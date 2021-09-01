@@ -21,9 +21,11 @@ export class CollaborateurListComponent implements OnInit {
   }
 
   // Get collabs list
+  
   loadCollabs() {
-    return this.restApi.getCollabs().subscribe((data: {}) => {
+    return this.restApi.get().subscribe((data: {}) => {
       this.collabTable = data;
     })
   }
+
 }
