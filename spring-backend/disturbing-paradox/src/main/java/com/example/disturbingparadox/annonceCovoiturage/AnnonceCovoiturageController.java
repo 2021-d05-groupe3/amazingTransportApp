@@ -27,12 +27,12 @@ public class AnnonceCovoiturageController {
 		return null;
 	}
 
-	@GetMapping("/annonces")
+	@GetMapping("/create-covoiturage")
 	public List<AnnonceCovoiturage> afficherLesAnnonces(){
 		return annonceCovoiturageService.getAnnonces();
 	}
 
-	@PostMapping("/annonce")
+	@PostMapping("/create-covoiturage")
 	public void ajouterAnnonce(@RequestBody AnnonceCovoiturageDto annonceCovoiturage) {
 		annonceCovoiturageService.addAnnonce(annonceCovoiturage);
 	}
