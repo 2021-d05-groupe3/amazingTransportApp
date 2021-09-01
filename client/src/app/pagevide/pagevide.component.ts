@@ -1,3 +1,8 @@
+import { LoggerService } from './../logger.service';
+//    --------------------------------------------------------------------------------------------
+//    PAGEVIDE.COMPONENT IS ONLY FOR TEST PURPOSES AND SHOULD NOT BE USED IN THE FINAL APPLICATION
+//    --------------------------------------------------------------------------------------------
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +12,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagevideComponent implements OnInit {
 
-  constructor() { }
+  constructor(private log : LoggerService) { }
 
   ngOnInit(): void {
+  }
+
+  onClick(){
+    this.log.loggedUser();
+  }
+
+  onClick2(){
+    this.log.logoutUser();
   }
 
 }
