@@ -1,4 +1,4 @@
-
+import { Vehicule } from './../../../models/vehicule';
 import { VehiculeService } from './../../../services/vehicule.service';
 import { Subscription } from 'rxjs';
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
@@ -11,19 +11,24 @@ import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 export class VehiculesComponent implements OnInit{
 
 
-  constructor(private VehiculeService: VehiculeService) { }
 
-  private vehiculeSubscribtion?: Subscription;
+  constructor(private VehiculeService: VehiculeService){}
+  vehicules! : Vehicule[];
   @Input() id?: string;
+  @Input() Vehicule? : Vehicule;
 
+
+
+  private vehiculeSubscription?: Subscription;
   ngOnInit(): void {
-   /** if (!this.vehicule) {
+
+    if (!this.vehicules) {
       if (this.id) {
           //on va le chercher via notre service grâce à son id
-          this.vehiculeSubscribtion = this.VehiculeService
+          this.vehiculeSubscription = this.VehiculeService
               .getById(this.id)
               .subscribe((vehicule) => {
-                  this.vehicule = vehicule;
+                  this.Vehicule = vehicule;
               });
       }
   }
@@ -31,10 +36,11 @@ export class VehiculesComponent implements OnInit{
   }
 
 
-  ngOnDestroy(): void {
-    if (this.vehiculeSubscription) {
-        this.vehiculeSubscription.unsubscribe();
-    }*/
+ // ngOnDestroy(): void {
+   // if (this.covoiturageSubscription) {
+      //  this.covoiturageSubscription.unsubscribe();
+   // }
 
-}
+//}
+
 }
