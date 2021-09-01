@@ -7,6 +7,8 @@ public class ReservationVehiculeEntrepriseDto {
     private LocalDateTime dateDeparture;
     private LocalDateTime dateArrival;
     private boolean hasDriver;
+    Long idVehiculeSociete;
+    Long idCollaborateur;
 
     
     public ReservationVehiculeEntrepriseDto() {
@@ -20,6 +22,26 @@ public class ReservationVehiculeEntrepriseDto {
 
     public void setDateDeparture(LocalDateTime dateDeparture) {
         this.dateDeparture = dateDeparture;
+    }
+
+
+    public Long getIdVehiculeSociete() {
+        return idVehiculeSociete;
+    }
+
+
+    public void setIdVehiculeSociete(Long idVehiculeSociete) {
+        this.idVehiculeSociete = idVehiculeSociete;
+    }
+
+
+    public Long getIdCollaborateur() {
+        return idCollaborateur;
+    }
+
+
+    public void setIdCollaborateur(Long idCollaborateur) {
+        this.idCollaborateur = idCollaborateur;
     }
 
 
