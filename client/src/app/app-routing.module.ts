@@ -1,4 +1,3 @@
-import { VerifComponent } from './verif/verif.component';
 import { PagevideComponent } from './pagevide/pagevide.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
@@ -18,8 +17,8 @@ const routes: Routes = [
   { path: 'create-covoiturage', component: CreateCovoiturageComponent},
   { path: 'vehicules', component:VehiculesComponent},
   { path: 'dashboardcollabs', component: CollaborateurListComponent},
-  { path: 'login', component: LoginComponent, canLoad:[VerifComponent]},
-  { path: 'vide', component: PagevideComponent, canLoad:[VerifComponent] }
+  { path: 'login', component: LoginComponent},
+  { path: 'vide', component: PagevideComponent}
 ];
 
 //Remplir la table const routes avec access link

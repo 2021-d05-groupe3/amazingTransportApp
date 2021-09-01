@@ -14,7 +14,6 @@ import { VehiculeDetailComponent } from './vehiculeSociete/vehicule-detail/vehic
 import { CollaborateurComponent } from './collaborateur/collaborateur.component';
 import { CollaborateurListComponent } from './collaborateur-list/collaborateur-list.component';
 import { AppRoutingModule } from './app-routing.module';
-import { VerifComponent } from './verif/verif.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +38,7 @@ import { VerifComponent } from './verif/verif.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [VerifComponent],
+  providers: [],
   bootstrap: [AppComponent]
 
 })

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { RouterModule, Routes, Router} from '@angular/router';
+import { Router} from '@angular/router';
 
 
 @Component({
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   isValid:boolean = false;  //True = Move to next page | Only true if iMail == jPass
   ;
 
-  constructor(private httpClient: HttpClient){}
+  constructor(private httpClient: HttpClient, private router : Router){}
   ngOnInit(){
     this.httpClient.get("assets/users.json").subscribe(users =>{console.log("Database accessed"); //Accesses the json database | console.log(users); to display the json DB
       this.products = users; //products stores the json database
@@ -55,11 +55,10 @@ export class LoginComponent implements OnInit {
 
       if (this.iMail == this.jPass){this.isValid = true; //If the email & the password both match the same user
       console.log("Succés. Vous êtes un utilisateur classé: " + this.products[this.jPass].class);  //Success + displays user's class | this.products[this.jPass].class = to catch user's class
-      //Routing here
+      this.router.navigateByUrl("/vide");
     }
 
       else{console.log("Le mot de passe ne correspond pas à l'email.");} //If the email & the password don't match the same user
-
   }
 }
 
