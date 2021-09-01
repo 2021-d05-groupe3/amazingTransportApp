@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { RouterModule, Routes, Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -26,9 +28,9 @@ export class LoginComponent implements OnInit {
       this.products = users; //products stores the json database
     })
   }
-  onClick(){ //When the button is clicked
-    this.ngOnInit;
 
+
+  onClick(){ //When the button is clicked
     var val = (document.getElementById('lemail')as HTMLInputElement).value; //Receives input from the HTML email field
 
     for(this.i=0; this.i< this.products.length; this.i++) //For each user in database
@@ -54,9 +56,12 @@ export class LoginComponent implements OnInit {
       //console.log(this.iMail); console.log(this.jPass);  //Check if iMail & jPass are affected
 
       if (this.iMail == this.jPass){this.isValid = true; //If the email & the password both match the same user
-      console.log("Succés. Vous êtes un utilisateur classé: " + this.products[this.jPass].class);}  //Success + displays user's class | this.products[this.jPass].class = to catch user's class
+      console.log("Succés. Vous êtes un utilisateur classé: " + this.products[this.jPass].class);  //Success + displays user's class | this.products[this.jPass].class = to catch user's class
+      //Routing here
+    }
+
       else{console.log("Le mot de passe de correspond pas à l'email.");} //If the email & the password don't match the same user
-      
+
   }
 }
 
