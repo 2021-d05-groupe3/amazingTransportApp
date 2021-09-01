@@ -13,12 +13,12 @@ public class ReservationCovoitController {
     @Autowired
     ReservationCovoitService reservationCovoitService;
 
-    @GetMapping("/dashboard")
+    @GetMapping("/reservationCovoits")
 	public List<ReservationCovoit> afficherLesAnnonces(){
 		return reservationCovoitService.getReservations();
 	}
 
-    @PostMapping("/covoiturages")
+    @PostMapping("/reservationCovoit")
 	public ReservationCovoit ajouterReservationCovoit(@RequestBody ReservationCovoitDto reservationCovoit) {
 		
 		return reservationCovoitService.addModel(reservationCovoit);
