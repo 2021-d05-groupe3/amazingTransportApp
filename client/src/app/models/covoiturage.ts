@@ -8,7 +8,7 @@ export interface Covoiturage extends Ressource {
   startDate: Date ;
   startHour: Time;
   startAdress: string;
-  finishAdress: number;
+  finishAdress: string;
   passengersNumber:number;
   vehicleType: Vehicule;
   organizer: string;
