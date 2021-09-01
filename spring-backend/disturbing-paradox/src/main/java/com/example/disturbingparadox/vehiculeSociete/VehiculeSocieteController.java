@@ -30,7 +30,7 @@ public class VehiculeSocieteController {
 
 	}
 
-	@GetMapping("/VehiculeSociete")
+	@GetMapping("/VehiculeSocietes")
 	public List<VehiculeSociete> afficherLesVehiculeSociete(){
 		return vehiculeSocieteService.getVehiculeSocietes();
 	}
