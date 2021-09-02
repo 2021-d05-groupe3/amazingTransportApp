@@ -1,9 +1,10 @@
+import { Vehicule } from './../models/vehicule';
+import { VehiculeService } from './../services/vehicule.service';
 import { CovoiturageService } from 'src/app/services/covoiturage.service';
 import { Covoiturage } from '../models/covoiturage';
-//import { CovoiturageService, covoiturageService } from './../services/covoiturage.service';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-dashboard-reservation',
@@ -11,6 +12,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./dashboard-reservation.component.css']
 })
 export class DashboardReservationComponent implements OnInit, OnDestroy {
+
 
   constructor(
     private covoiturageService: CovoiturageService
@@ -50,11 +52,18 @@ export class DashboardReservationComponent implements OnInit, OnDestroy {
 
 
 /**
+
+
+  constructor(private covoiturageService: CovoiturageService, private vehiculeService: VehiculeService){}
+  covoiturages! : Covoiturage[];
+  vehicules! : Vehicule[];
+
   @Input() id?: string;
   @Input() covoiturage?: Covoiturage;
+  @Input() vehicule?: Vehicule;
 
 
-  private covoiturageSubscription?: Subscription;
+  private covoiturageSubscription?: Subscription; vehiculeSubscription?: Subscription;
   ngOnInit(): void {
       //si on a pas reçu l'objet en entier
       if (!this.covoiturage) {
@@ -68,6 +77,18 @@ export class DashboardReservationComponent implements OnInit, OnDestroy {
           }
       }
 
+          if (!this.vehicule) {
+              if (this.id) {
+                  //on va le chercher via notre service grâce à son id
+                  this.vehiculeSubscription = this.vehiculeService
+                      .getById(this.id)
+                      .subscribe((vehicule) => {
+                          this.vehicule = vehicule;
+                      });
+              }
+          }
+
+
   }
 
 
@@ -75,7 +96,9 @@ export class DashboardReservationComponent implements OnInit, OnDestroy {
     if (this.covoiturageSubscription) {
         this.covoiturageSubscription.unsubscribe();
     }
-
+    if (this.vehiculeSubscription) {
+      this.vehiculeSubscription.unsubscribe();
+  }
 }
 
 
