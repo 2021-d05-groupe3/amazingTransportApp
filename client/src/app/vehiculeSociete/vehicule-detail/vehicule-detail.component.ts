@@ -12,7 +12,7 @@ import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/cor
 export class VehiculeDetailComponent implements OnInit {
 
 
-  title = 'Réserver mon véhucule de Société';
+  title = 'Réserver mon véhicule de Société';
 
   createForm!: FormGroup;
   private vehiculeDetailSubscription? : Subscription;
