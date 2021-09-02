@@ -11,7 +11,7 @@ import { CollaborateurListComponent } from './collaborateur-list/collaborateur-l
 import { VehiculeDetailComponent } from './vehiculeSociete/vehicule-detail/vehicule-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'covoiturages', component: CovoituragesComponent},
   { path: 'dashboard', component: DashboardReservationComponent},
   { path: 'detail/:id', component: CovoiturageDetailComponent},

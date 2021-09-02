@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,5 +27,57 @@
         </div>
     </div>
 </body>
+<div class="container">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+  <form [formGroup]="createForm" novalidate>
 
+        <div class="form-group">
+            <label>Date de départ:</label>
+            <input class="form-control" formControlName="startDate" type="text">
+        </div>
+        <div *ngIf="createForm.controls['startDate'].invalid && (createForm.controls[' startDate'].dirty || createForm.controls['startDate'].touched)" class="alert alert-danger">
+            <div *ngIf="createForm.controls['date'].errors?.required">
+              date is required.
+            </div>
+        </div>
+         <div class="form-group">
+            <label>Heure de début:</label>
+            <input class="form-control" formControlName="startHour" type="text">
+        </div>
+        <div *ngIf="createForm.controls['startHour'].invalid && (createForm.controls['startHour'].dirty || createForm.controls['startHour'].touched)" class="alert alert-danger">
+            <div *ngIf="createForm.controls['startHour'].errors?.required">
+              heure is required.
+            </div>
+        </div>
+        <div class="form-group">
+          <label>Date de retour:</label>
+          <input class="form-control" formControlName="finishDate" type="text">
+      </div>
+      <div *ngIf="createForm.controls['StartAdress'].invalid && (createForm.controls['StartAdress'].dirty || createForm.controls['StartAdress'].touched)" class="alert alert-danger">
+          <div *ngIf="createForm.controls['StartAdress'].errors?.required">
+           date de retour is required.
+          </div>
+      </div>
+      <div class="form-group">
+        <label>Nom:</label>
+        <input class="form-control" formControlName="name" type="text">
+    </div>
+    <form *ngIf="createForm.controls['finishAdress'].invalid && (createForm.controls[ 'finishAdress'].dirty || createForm.controls[ 'finishAdress'].touched)" class="alert alert-danger">
+        <div *ngIf="createForm.controls[ 'finishAdress'].errors?.required">
+         Nom is required.
+        </div>
+    </form>
+
+        <button type="submit"
+            [disabled]="createForm.pristine || createForm.invalid" class="btn btn-success">
+            Enregistrer
+        </button>
+  </form>
+  <br />
+  <p>Form value: {{ createForm.value | json }}</p>
+  <p>Form status: {{ createForm.status | json }}</p>
+</div>
 </html>
+  
