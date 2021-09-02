@@ -14,9 +14,50 @@ import { Subscription } from 'rxjs';
 export class DashboardReservationComponent implements OnInit, OnDestroy {
 
 
+  constructor(
+    private covoiturageService: CovoiturageService
+  ) { }
+
+  covoiturages: any = [];
+  trajetSociete: any = [];
+
+  ngOnInit(): void {
+
+    this.loadReservationCovoiturage()
+
+   // this.loadReservationSociete()
+
+  }
+
+  ngOnDestroy(): void {
+
+  }
+
+  //Get list covoiturage
+  
+  loadReservationCovoiturage() {
+    return this.covoiturageService.get().subscribe((data: {}) => {
+      this.covoiturages = data;
+    })
+  }
+/*
+  loadReservationSociete() {
+    return this.vehiculeSociete.get().subscribe((data: {}) => {
+      this.trajetSociete = data;
+    })
+  }
+*/
+
+}
+
+
+/**
+
+
   constructor(private covoiturageService: CovoiturageService, private vehiculeService: VehiculeService){}
   covoiturages! : Covoiturage[];
   vehicules! : Vehicule[];
+
   @Input() id?: string;
   @Input() covoiturage?: Covoiturage;
   @Input() vehicule?: Vehicule;
@@ -95,6 +136,4 @@ getCovoiturages(): void {
   this.covoiturageService.getCovoiturages().subscribe( (data) => this.covoiturages = data)
 }**/
 
-
-}
 

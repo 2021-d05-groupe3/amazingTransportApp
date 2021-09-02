@@ -24,7 +24,7 @@ public class AnnonceCovoiturage {
     int nbrDePlaceRestante;
     LocalDateTime dateHDepart;
     String adresseDepart;
-    String adresseArrivée;
+    String adresseArrivee;
  
 
     @ManyToOne// jointure plusieurs annonce peuvent avoir 1 vehicule
@@ -61,10 +61,10 @@ public class AnnonceCovoiturage {
         this.adresseDepart = adresseDepart;
     }
     public String getAdresseArrivée() {
-        return adresseArrivée;
+        return adresseArrivee;
     }
     public void setAdresseArrivée(String adresseArrivée) {
-        this.adresseArrivée = adresseArrivée;
+        this.adresseArrivee = adresseArrivée;
     }
   
    

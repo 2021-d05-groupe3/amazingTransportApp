@@ -18,10 +18,10 @@ public class MarqueService {
 		
 	}
 
-  public Marque addCategorie(MarqueDto nouvelleCategorie) {
+  public Marque addCategorie(MarqueDto nouvelleMarque) {
 	  Marque marque = new Marque();
-	  marque.setNom(marque.nom);
-	  marque.setPays(marque.pays);
+	  marque.setNom(nouvelleMarque.nom);
+	  marque.setPays(nouvelleMarque.pays);
 		return marqueRepository.save(marque);
 	}
 	

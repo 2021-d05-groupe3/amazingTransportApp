@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+
 
 import com.example.disturbingparadox.collaborateur.Collaborateur;
 import com.example.disturbingparadox.vehiculeSociete.VehiculeSociete;
@@ -30,7 +30,8 @@ public class ReservationVehiculeEntreprise {
     @Column
     private boolean hasDriver;
 
-    @OneToOne
+    @ManyToOne// jointure plusieurs annonces peuvent avoir 1 collaborateur
+    @JoinColumn(name = "id_vehicule_societe")
     private VehiculeSociete vehiculeSociete;
 
     @ManyToOne// jointure plusieurs annonces peuvent avoir 1 collaborateur
@@ -66,6 +67,22 @@ public class ReservationVehiculeEntreprise {
 
     public void setHasDriver(boolean hasDriver) {
         this.hasDriver = hasDriver;
+    }
+
+    public VehiculeSociete getVehiculeSociete() {
+        return vehiculeSociete;
+    }
+
+    public void setVehiculeSociete(VehiculeSociete vehiculeSociete) {
+        this.vehiculeSociete = vehiculeSociete;
+    }
+
+    public Collaborateur getCollaborateur() {
+        return collaborateur;
+    }
+
+    public void setCollaborateur(Collaborateur collaborateur) {
+        this.collaborateur = collaborateur;
     }
 
     

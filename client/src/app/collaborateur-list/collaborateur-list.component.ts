@@ -9,21 +9,23 @@ import { RestApiService } from '../shared/rest-api.service';
 })
 export class CollaborateurListComponent implements OnInit {
 
-  Collab: any = [];
+  collabTable: any = [];
 
   constructor(
-    public restApi: RestApiService
+    private restApi: RestApiService
   ) { }
 
   ngOnInit(): void {
 
-    this.loadEmployees()
+    this.loadCollabs()
   }
 
-  // Get employees list
-  loadEmployees() {
-    return this.restApi.getCollabs().subscribe((data: {}) => {
-      this.Collab = data;
+  // Get collabs list
+  
+  loadCollabs() {
+    return this.restApi.get().subscribe((data: {}) => {
+      this.collabTable = data;
     })
   }
+
 }

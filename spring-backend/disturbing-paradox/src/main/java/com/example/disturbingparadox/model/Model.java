@@ -2,6 +2,7 @@ package com.example.disturbingparadox.model;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +20,7 @@ public class Model {
     @Column()
     String nom;
 
-    @OneToMany(mappedBy = "vehiculeModel")//jointure 1 marque peut avoir plusieurs vehicules
+    @OneToMany(mappedBy = "vehiculeModel", cascade = CascadeType.ALL)//jointure 1 marque peut avoir plusieurs vehicules
     private Set<Vehicule> vehicules;
 
 
