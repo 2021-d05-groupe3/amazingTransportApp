@@ -24,8 +24,9 @@ public class CategorieService {
 	}
 
   public Categorie addCategorie(CategorieDto nouvelleCategorie) {
+	  
 	  Categorie categorie = new Categorie();
-	  categorie.setLibelle(categorie.libelle);
+	  categorie.setLibelle(nouvelleCategorie.libelle);
 		return categorieRepository.save(categorie);
 	}
 

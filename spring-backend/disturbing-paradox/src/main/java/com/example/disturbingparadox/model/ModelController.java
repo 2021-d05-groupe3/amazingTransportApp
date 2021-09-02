@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.web.bind.annotation.RestController;
+@RestController
 public class ModelController {
     @Autowired
 	ModelService modelService;
@@ -22,9 +23,11 @@ public class ModelController {
 	}
 
 	@PostMapping("/model")
-	public Model ajouterMarque(@RequestBody ModelDto model) {
+	public Model ajouterModel(@RequestBody ModelDto model) {
 		
 		return modelService.addModel(model);
 	}
+
+	
     
 }

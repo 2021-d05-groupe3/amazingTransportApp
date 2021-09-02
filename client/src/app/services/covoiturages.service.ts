@@ -1,22 +1,15 @@
+import { Covoiturages } from './../models/covoiturages';
+import { Ressource } from './../models/ressource';
 import { HttpClient } from '@angular/common/http';
-import { Vehicule } from '../models/vehicule';
-
 import { Injectable } from '@angular/core';
-
 import { RessourceService } from './ressource.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class VehiculeService extends RessourceService<Vehicule> {
-  
-  endPoint(): string {
-    return 'vehicule';
-  }
+export class CovoituragesService extends RessourceService<Covoiturages>{
 
   constructor(http: HttpClient) {
-    super(http)
+    super( http, 'covoiturages' )
    }
-
-  
 }

@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { CovoiturageService } from './../../services/covoiturage.service';
 import { Covoiturage } from '../../models/covoiturage';
@@ -10,8 +11,14 @@ import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 })
 export class CovoituragesComponent implements OnInit, OnDestroy{
 
+  title = 'Réserver mon covoiturage';
 
-  constructor(private covoiturageService: CovoiturageService){}
+  createForm!: FormGroup;
+
+
+  private vehiculeDetailSubscription? : Subscription;
+  constructor(private fb: FormBuilder, private covoiturageService: CovoiturageService){}
+
   covoiturages! : Covoiturage[];
   @Input() id?: string;
   @Input() covoiturage?: Covoiturage;
@@ -30,7 +37,13 @@ export class CovoituragesComponent implements OnInit, OnDestroy{
                   });
           }
       }
+      this.createForm = this.fb.group(
+        {
+          startDate: ['', Validators.required],
 
+          finishDate: ['', Validators.required],
+          organizer: ['', Validators.required]
+      })
   }
 
 

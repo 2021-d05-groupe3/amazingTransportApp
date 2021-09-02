@@ -8,6 +8,7 @@ import { RouterModule, Routes, CanLoad } from '@angular/router';
 import { DashboardReservationComponent } from './dashboard-reservation/dashboard-reservation.component';
 import { VehiculesComponent } from './vehiculeSociete/vehicules/vehicules/vehicules.component';
 import { CollaborateurListComponent } from './collaborateur-list/collaborateur-list.component';
+import { VehiculeDetailComponent } from './vehiculeSociete/vehicule-detail/vehicule-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -16,9 +17,10 @@ const routes: Routes = [
   { path: 'detail/:id', component: CovoiturageDetailComponent},
   { path: 'create-covoiturage', component: CreateCovoiturageComponent},
   { path: 'vehicules', component:VehiculesComponent},
-  { path: 'dashboardcollabs', component: CollaborateurListComponent},
   { path: 'login', component: LoginComponent}, //default page
-  { path: 'vide', component: PagevideComponent} //vide is for test purposes
+  { path: 'vide', component: PagevideComponent}, //vide is for test purposes
+  { path: 'collaborateur-list', component: CollaborateurListComponent},
+  { path: 'vehicule-detail', component: VehiculeDetailComponent}
 ];
 
 @NgModule({

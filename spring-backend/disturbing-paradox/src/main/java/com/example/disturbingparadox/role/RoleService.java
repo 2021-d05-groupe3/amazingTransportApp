@@ -17,4 +17,11 @@ public class RoleService {
         
 		
 	} 
+
+  public Role addRole(RoleDto nouveauRole) {
+	  Role role = new Role();
+	  role.setLibelle(nouveauRole.getLibelle());
+	  
+		return roleRepository.save(role);
+	}
 }
