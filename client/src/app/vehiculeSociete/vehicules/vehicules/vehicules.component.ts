@@ -19,28 +19,10 @@ export class VehiculesComponent implements OnInit {
 
   constructor(private VehiculeService: VehiculeService){}
   vehicules! : Vehicule[];
-  @Input() id?: string;
-  @Input() Vehicule? : Vehicule;
 
-
-
-  
-
-
-  private vehiculeSubscription?: Subscription;
   ngOnInit(): void {
-
-
-    if (!this.vehicules) {
-      if (this.id) {
-          //on va le chercher via notre service grâce à son id
-          this.vehiculeSubscription = this.VehiculeService
-              .getById(this.id)
-              .subscribe((vehicule) => {
-                  this.Vehicule = vehicule;
-              });
-      }
-
+    
+    this.loadVehicule()
 
   }
 
@@ -62,8 +44,6 @@ export class VehiculesComponent implements OnInit {
 
 //}
 
-}
-=======
 /*
 
         =========== 

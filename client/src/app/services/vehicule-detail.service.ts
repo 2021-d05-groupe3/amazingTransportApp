@@ -9,7 +9,11 @@ import { RessourceService } from './ressource.service';
 })
 export class VehiculeDetailService  extends RessourceService<VehiculeDetail>{
 
+  endPoint(): string {
+    return 'vehicule-detail'
+  }
+
   constructor(http: HttpClient) {
-    super(http, 'vehiculDetail')
+    super(http)
    }
 }
