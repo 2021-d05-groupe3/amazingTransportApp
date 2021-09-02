@@ -25,12 +25,14 @@ if(oVehicule.isPresent()){
 		return null;
 	}
 
-	@GetMapping("/Vehicules")
+	@GetMapping("/vehicules")
 	public List<Vehicule> afficherLesVehicules(){
 		return vehiculeService.getVehicules();
 	}
 
-	@PostMapping("/Vehicule")
+
+
+	@PostMapping("/vehicule")
 	public Vehicule ajouterVehicule(@RequestBody VehiculeDto vehicule) {
 	
 		return vehiculeService.addVehicule(vehicule);

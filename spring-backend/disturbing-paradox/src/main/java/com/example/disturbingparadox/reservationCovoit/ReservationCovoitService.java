@@ -14,6 +14,8 @@ public class ReservationCovoitService {
 		return reservationCovoitRepository.findAll();
 	}
 
+ 
+
     public ReservationCovoit addModel(ReservationCovoitDto nouvelleReservationCovoit) {
         ReservationCovoit reservationCovoit = new ReservationCovoit();
         reservationCovoit.setDateDeparture(nouvelleReservationCovoit.getDateDeparture());

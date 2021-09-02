@@ -30,18 +30,18 @@ public class VehiculeSocieteController {
 
 	}
 
-	@GetMapping("/VehiculeSocietes")
+	@GetMapping("/vehiculeSocietes")
 	public List<VehiculeSociete> afficherLesVehiculeSociete(){
 		return vehiculeSocieteService.getVehiculeSocietes();
 	}
 
-	@PostMapping("/VehiculeSociete")
+	@PostMapping("/vehiculeSociete")
 	public VehiculeSocieteDto ajouterVehicule(@RequestBody VehiculeSocieteDto vehiculeSociete) {
 
 		return vehiculeSocieteService.addVehiculeSociete(vehiculeSociete);
 	}
 
-	@DeleteMapping("/VehiculeSociete/{id}")  	
+	@DeleteMapping("/vehiculeSociete/{id}")  	
 	public String suprimerVehicule(@PathVariable("id") Long id) {
 		vehiculeSocieteService.deleteVehiculeSociete(id);
 	     return"supression ok";

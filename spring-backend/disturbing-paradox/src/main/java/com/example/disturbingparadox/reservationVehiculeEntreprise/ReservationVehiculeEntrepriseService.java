@@ -23,6 +23,8 @@ public class ReservationVehiculeEntrepriseService {
 		return reservationVehiculeEntrepriseRepository.findAll();
 	}
 
+
+
     public ReservationVehiculeEntreprise addReservationVehiculeEntreprise(ReservationVehiculeEntrepriseDto nouvelleReservationVehiculeEntreprise) {
         ReservationVehiculeEntreprise reservationVehiculeEntreprise = new ReservationVehiculeEntreprise();
         reservationVehiculeEntreprise.setDateDeparture(nouvelleReservationVehiculeEntreprise.getDateDeparture());

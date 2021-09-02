@@ -13,9 +13,12 @@ public class ReservationVehiculeEntrepriseController {
     ReservationVehiculeEntrepriseService reservationVehiculeEntrepriseService;
 
     @GetMapping("/reservationVehiculeEntreprises")
-	public List<ReservationVehiculeEntreprise> afficherLesAnnonces(){
+	public List<ReservationVehiculeEntreprise> afficherLesReservationVehiculeEntreprises(){
 		return reservationVehiculeEntrepriseService.getReservationVehiculeEntreprises();
 	}
+
+	
+
 
     @PostMapping("/reservationVehiculeEntreprise")
 	public ReservationVehiculeEntreprise ajouterReservationVehiculeEntreprise(@RequestBody ReservationVehiculeEntrepriseDto ReservationVehiculeEntreprise) {
