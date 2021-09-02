@@ -22,6 +22,11 @@ public class ModelController {
 
 	}
 
+	@GetMapping("/model")
+	public List<Model> afficherLesCollaborateurs(){
+		return modelService.getModels();
+	}
+
 	@PostMapping("/model")
 	public Model ajouterModel(@RequestBody ModelDto model) {
 		

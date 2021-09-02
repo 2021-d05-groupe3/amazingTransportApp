@@ -17,6 +17,10 @@ public class ModelService {
 		
 	}
 
+	public List<Model> getModels() {
+        return modelRepository.findAll();
+    }
+
   public Model addModel(ModelDto nouveauModel) {
 	  Model model = new Model();
 	  model.setNom(nouveauModel.nom);
