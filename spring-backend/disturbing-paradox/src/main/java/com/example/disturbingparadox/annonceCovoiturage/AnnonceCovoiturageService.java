@@ -13,13 +13,8 @@ public class AnnonceCovoiturageService {
     AnnonceCovoiturageRepository annonceCovoiturageRepository;
 
     public Optional<AnnonceCovoiturage> getAnnonceCovoiturage(Long id) {
-        return null;
-    }
 
-
-		return  annonceCovoiturageRepository.findById(id);
-        
-		
+		return  annonceCovoiturageRepository.findById(id);		
 	}
 
   public List<AnnonceCovoiturage> getAnnonces(){
