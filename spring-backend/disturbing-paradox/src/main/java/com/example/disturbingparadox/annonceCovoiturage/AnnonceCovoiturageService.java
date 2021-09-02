@@ -30,6 +30,7 @@ public class AnnonceCovoiturageService {
 	annonceCovoiturage.setDateHDepart(nouvelleAnonce.dateHDepart);
 	annonceCovoiturage.setAdresseDepart(nouvelleAnonce.adresseDepart);
 	annonceCovoiturage.setAdresseArrivée(nouvelleAnonce.adresseArrivee);
+	
 		return annonceCovoiturageRepository.save(annonceCovoiturage);
 	}
 

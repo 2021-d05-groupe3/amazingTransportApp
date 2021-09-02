@@ -7,6 +7,7 @@ public class AnnonceCovoiturageDto {
     LocalDateTime dateHDepart;
     String adresseDepart;
     String adresseArrivee;
+    
 
 
     public AnnonceCovoiturageDto() {
@@ -55,9 +56,20 @@ public class AnnonceCovoiturageDto {
 
     @Override
     public String toString() {
-        return "AnnonceCovoiturageDto [adresseArrivée=" + adresseArrivee + ", adresseDepart=" + adresseDepart
+        return "AnnonceCovoiturageDto [adresseArrivee=" + adresseArrivee + ", adresseDepart=" + adresseDepart
                 + ", dateHDepart=" + dateHDepart + ", nbrDePlaceRestante=" + nbrDePlaceRestante + "]";
     }
+
+    
+
+
+   
+
+
+  
+
+
+   
 
     
 

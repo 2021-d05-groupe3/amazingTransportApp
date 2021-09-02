@@ -1,7 +1,6 @@
 package com.example.disturbingparadox.vehiculeSociete;
 
 
-
 public class VehiculeSocieteDto  { 
     String immatriculation;
     Long vehiculeMarque;
@@ -104,10 +103,31 @@ public class VehiculeSocieteDto  {
 
     @Override
     public String toString() {
-        return "VehiculeSocieteDto [ idCategorie=" + idCategorie
-                + ", idVehicule=" + idVehicule + ", immatriculation=" + immatriculation + ", statut=" + statut
-                + ", vehiculeMarque=" + vehiculeMarque + ", vehiculeModel=" + vehiculeModel + "]";
+        return "VehiculeSocieteDto [idCategorie=" + idCategorie + ", idVehicule=" + idVehicule + ", immatriculation="
+                + immatriculation + ", statut=" + statut + ", vehiculeMarque=" + vehiculeMarque + ", vehiculeModel="
+                + vehiculeModel + "]";
     }
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+ 
+
+
+
+
+
 
 
 

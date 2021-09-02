@@ -48,6 +48,7 @@ public class VehiculeSocieteService {
     VehiculeSociete vehiculeSociete = new VehiculeSociete();
     vehiculeSociete.setStatut(nouveauVehiculeSociete.getStatut());
     vehiculeSociete.setImmatriculation(nouveauVehiculeSociete.getImmatriculation());
+  
    
 
     
@@ -68,6 +69,8 @@ public class VehiculeSocieteService {
 		  vehiculeSociete.setVehiculeModel(oModel.get());
       
 	  }
+   
+
     VehiculeSociete nVehiculeSociete = vehiculeSocieteRepository.save(vehiculeSociete);
     VehiculeSocieteDto nVehiculeSocieteDto = new VehiculeSocieteDto();
     nVehiculeSocieteDto.setIdCategorie(nVehiculeSociete.getCategorie().getId());
@@ -76,6 +79,7 @@ public class VehiculeSocieteService {
     nVehiculeSocieteDto.setVehiculeModel(nVehiculeSociete.getVehiculeModel().getId());
     nVehiculeSocieteDto.setIdVehicule(nVehiculeSociete.getId());
     nVehiculeSocieteDto.setStatut(nVehiculeSociete.getStatut());
+    
    return nVehiculeSocieteDto;
   }
 

@@ -23,6 +23,8 @@ public class VehiculeSociete extends Vehicule {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id ;
 
+    
+
     @Column()
     String statut;
 
