@@ -22,6 +22,11 @@ public class MarqueController {
 		return marques;
 	}
 
+	@GetMapping("/marque")
+	public List<Marque> afficherLesCollaborateurs(){
+		return marqueService.getMarques();
+	}
+
 	@PostMapping("/marque")
 	public Marque ajouterMarque(@RequestBody MarqueDto marque) {
 		

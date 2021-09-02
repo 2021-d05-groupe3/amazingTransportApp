@@ -18,6 +18,10 @@ public class MarqueService {
 		
 	}
 
+	public List<Marque> getMarques() {
+        return marqueRepository.findAll();
+    }
+
   public Marque addCategorie(MarqueDto nouvelleMarque) {
 	  Marque marque = new Marque();
 	  marque.setNom(nouvelleMarque.nom);
