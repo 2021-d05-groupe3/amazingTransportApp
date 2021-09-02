@@ -1,0 +1,29 @@
+[{
+  "id": 1,
+  "name": "Paul",
+  "email": "paul123@gmail.com",
+  "password": "paul123",
+  "class": "user"
+},
+{
+  "id": 2,
+  "name": "Rick",
+  "email": "riri100@gmail.com",
+  "password": "100rick",
+  "class": "driver"
+},
+{
+  "id": 3,
+  "name": "Simon",
+  "email": "simon.pro@gmail.com",
+  "password": "leprosimon",
+  "class": "admin"
+},
+{
+  "id": 4,
+  "name": "Jack",
+  "email": "jack1222@gmail.com",
+  "password": "itsmejack",
+  "class": "0"
+}
+]

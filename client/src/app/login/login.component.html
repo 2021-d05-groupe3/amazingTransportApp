@@ -1,0 +1,43 @@
+<div class="login">
+  <div class="card card-container">
+    <img
+      id="profile-img"
+      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+      class="profilepic"
+      height= 200px;
+      width="200"
+    />
+    <form  name="form"> <!-- Mail input -->
+      <div class="form-group">
+        <label for="mail">E-mail</label>
+        <input
+          id="lemail"
+          type="text"
+          class="form-control"
+          name="mail"
+          required
+        />
+      </div>            <!-- Password input -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="lepass"
+          type="password"
+          class="form-control"
+          name="password"
+          required
+          minlength="6"
+        />
+
+      </div>
+      <div class="form-group">    <!-- Login button > Calls "onClick()" method in login.component.ts" -->
+        <button (click)="onClick()" class="btn btn-primary btn-block">
+          Login
+        </button>
+      </div>
+      <div class="form-group">
+      </div>
+    </form>
+    </div>
+  </div>
+

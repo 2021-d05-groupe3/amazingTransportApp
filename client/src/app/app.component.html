@@ -4,35 +4,28 @@
     <a routerLink="/dashboard">Dashboard</a>
     <a routerLink="/dashboardcollabs">ListCollabs</a>
     !-->
-
-
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="/dashboard" href="/dashboard">Mes réservations</a>
+          <a class="nav-link active" (click)="onClick()" routerLink="/dashboard">Mes réservations</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/create-covoiturage">Créer une annonce de covoiturage</a>
+          <a class="nav-link" (click)="onClick()" routerLink="/create-covoiturage">Créer une annonce de covoiturage</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/vehicules">Réserver un vehicule de société</a>
+          <a class="nav-link" (click)="onClick()" routerLink="/vehicules">Réserver un vehicule de société</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/covoiturages">Réserver un covoiturage</a>
+          <a class="nav-link" (click)="onClick()" routerLink="/covoiturages">Réserver un covoiturage</a>
         </li>
         <li class="nav-item">
-
-          <a class="nav-link" href="/collaborateur-list">List Collababorateurs</a>
-
-          <a class="nav-link" routerLink="/collaborateur-list">List Collab</a>
+          <a class="nav-link" (click)="onClick()" routerLink="/collaborateur-list">List Collab</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-
+          <a class="nav-link" (click)="onClick2()" routerLink="/login"> |    Logout</a>
         </li>
 
       </ul>
