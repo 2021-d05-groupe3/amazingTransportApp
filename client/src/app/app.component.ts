@@ -1,3 +1,4 @@
+import { LoggerService } from './logger.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,4 +9,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class AppComponent {
   title = 'Client Amazing Transport';
+
+  constructor(private log : LoggerService) { }
+
+  onClick(){
+    this.log.logoutUser();
+  }
 }

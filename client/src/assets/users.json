@@ -1,29 +1,29 @@
 [{
   "id": 1,
-  "name": "Oui",
-  "email": "oui@oui.com",
-  "password": "ouipass",
+  "name": "Paul",
+  "email": "paul123@gmail.com",
+  "password": "paul123",
   "class": "user"
 },
 {
   "id": 2,
-  "name": "Non",
-  "email": "non@non.com",
-  "password": "nonpass",
+  "name": "Rick",
+  "email": "riri100@gmail.com",
+  "password": "100rick",
   "class": "driver"
 },
 {
   "id": 3,
-  "name": "Pitetre",
-  "email": "pitetre@pitetre.com",
-  "password": "pitetrepass",
+  "name": "Simon",
+  "email": "simon.pro@gmail.com",
+  "password": "leprosimon",
   "class": "admin"
 },
 {
   "id": 4,
-  "name": "Error",
-  "email": "error@error.com",
-  "password": "errorpass",
+  "name": "Jack",
+  "email": "jack1222@gmail.com",
+  "password": "itsmejack",
   "class": "0"
 }
 ]
