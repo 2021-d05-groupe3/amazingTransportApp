@@ -8,7 +8,7 @@ import { RessourceService } from './ressource.service';
 })
 export class CovoiturageService extends RessourceService<Covoiturage> {
   endPoint(): string {
-    return 'covoiturage';
+    return 'reservationCovoits';
   }
 
 
