@@ -1,8 +1,6 @@
 package com.example.disturbingparadox.annonceCovoiturage;
 
 
-import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,10 +11,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
+
 @RestController
 public class AnnonceCovoiturageController {
     @Autowired
 	AnnonceCovoiturageService annonceCovoiturageService;
+
 
     @GetMapping("/annonceCovoiturage/{id}")
     public AnnonceCovoiturage  getCategorie(@PathVariable Long id) {
@@ -42,5 +42,6 @@ public class AnnonceCovoiturageController {
 		annonceCovoiturageService.deleteAnnonce(id);
 	     return"supression ok";
 	}
+
     
 }
