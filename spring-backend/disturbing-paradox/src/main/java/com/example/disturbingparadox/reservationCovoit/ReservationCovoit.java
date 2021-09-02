@@ -27,7 +27,7 @@ public class ReservationCovoit {
     private LocalDateTime dateArrival;
 
     @ManyToOne// jointure plusieurs annonce peuvent avoir 1 vehicule
-    @JoinColumn(name = "reservationsCovoits")
+    @JoinColumn(name = "Id_annonce")
     private AnnonceCovoiturage annonceCovoiturage;
 
     @ManyToOne// jointure plusieurs annonces peuvent avoir 1 collaborateur
@@ -35,7 +35,14 @@ public class ReservationCovoit {
     private Collaborateur collaborateur;
 
     public ReservationCovoit() {
+
+        
     }
+
+    
+
+    
+
 
     public Long getId() {
         return id;

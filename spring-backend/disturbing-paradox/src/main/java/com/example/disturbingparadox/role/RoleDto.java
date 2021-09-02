@@ -1,10 +1,11 @@
-package com.example.disturbingparadox.categorie;
+package com.example.disturbingparadox.role;
 
-public class CategorieDto {
+public class RoleDto {
 
-   public String libelle;
+    String libelle;
 
-   
+    public RoleDto() {
+    }
 
     public String getLibelle() {
         return libelle;
@@ -16,10 +17,9 @@ public class CategorieDto {
 
     @Override
     public String toString() {
-        return "CategorieDto [libelle=" + libelle + "]";
+        return "RoleDto [libelle=" + libelle + "]";
     }
 
     
-
     
 }

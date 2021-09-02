@@ -16,15 +16,34 @@ public class AnnonceCovoiturageService {
         return null;
     }
 
-    public List<AnnonceCovoiturage> getAnnonces() {
-        return null;
-    }
 
-    public void addAnnonce(AnnonceCovoiturageDto annonceCovoiturage) {
-    }
+		return  annonceCovoiturageRepository.findById(id);
+        
+		
+	}
 
-    public void deleteAnnonce(Long id) {
-    }
+  public List<AnnonceCovoiturage> getAnnonces(){
+		return annonceCovoiturageRepository.findAll();
+	}
 
-    
+  public AnnonceCovoiturage addAnnonce(AnnonceCovoiturageDto nouvelleAnonce) {
+
+	AnnonceCovoiturage annonceCovoiturage = new AnnonceCovoiturage();
+	annonceCovoiturage.setNbrDePlaceRestante(nouvelleAnonce.nbrDePlaceRestante);
+	annonceCovoiturage.setDateHDepart(nouvelleAnonce.dateHDepart);
+	annonceCovoiturage.setAdresseDepart(nouvelleAnonce.adresseDepart);
+	annonceCovoiturage.setAdresseArrivée(nouvelleAnonce.adresseArrivee);
+	
+		return annonceCovoiturageRepository.save(annonceCovoiturage);
+	}
+
+	
+
+  public void deleteAnnonce(Long id) {
+		for(AnnonceCovoiturage a: annonceCovoiturageRepository.findAll() ) {
+			if(id.equals(a.getId()))
+      annonceCovoiturageRepository.delete(a);
+		}
+	}
+
 }  
