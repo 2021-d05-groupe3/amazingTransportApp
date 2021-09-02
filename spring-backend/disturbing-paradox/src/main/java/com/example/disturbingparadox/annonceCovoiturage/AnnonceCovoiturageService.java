@@ -17,10 +17,10 @@ public class AnnonceCovoiturageService {
     }
 
 
-		return  annonceCovoiturageRepository.findById(id);
+		
         
 		
-	}
+	
 
   public List<AnnonceCovoiturage> getAnnonces(){
 		return annonceCovoiturageRepository.findAll();
