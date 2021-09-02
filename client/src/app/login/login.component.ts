@@ -65,12 +65,13 @@ export class LoginComponent implements OnInit {
       {
         this.log.isLogged = true;
         console.log("Succés. Vous êtes un utilisateur classé: " + this.products[this.jPass].class);  //Success + displays user's class
-        this.router.navigateByUrl("/vide"); //Allows navigation to next page using its URL (/dashboard in this case)
+        this.router.navigateByUrl("/dashboard"); //Allows navigation to next page using its URL (/dashboard or /vide for test purposes)
       }
       else {this.log.logoutUser(); console.log("Une erreur s'est produite.")} //Reset data if the user isn't fully logged in
     }
 
       else{console.log("Le mot de passe ne correspond pas à l'email.");} //If the email & the password don't match the same user
+
   }
 }
 

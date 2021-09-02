@@ -24,4 +24,12 @@ export class LoggerService {
     this.type = "0";
     this.router.navigateByUrl("/login");
   }
+  loadIfLogged(){ //Verify if the user is logged in before giving him access to next page
+    if (this.isLogged==true){}
+    else{
+      const currentRoute = this.router.routerState;
+      this.router.navigateByUrl(currentRoute.snapshot.url, { skipLocationChange: true })
+      this.logoutUser();
+    }
+  }
 }

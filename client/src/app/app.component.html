@@ -4,32 +4,30 @@
     <a routerLink="/dashboard">Dashboard</a>
     <a routerLink="/dashboardcollabs">ListCollabs</a>
     !-->
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/login">Connexion</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="/dashboard" href="#">Mes réservations</a>
+          <a class="nav-link active" (click)="onClick()" routerLink="/dashboard">Mes réservations</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/create-covoiturage">Créer une annonce de covoiturage</a>
+          <a class="nav-link" (click)="onClick()" routerLink="/create-covoiturage">Créer une annonce de covoiturage</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/vehicules">Réserver un vehicule de société</a>
+          <a class="nav-link" (click)="onClick()" routerLink="/vehicules">Réserver un vehicule de société</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/covoiturages">Réserver un covoiturage</a>
+          <a class="nav-link" (click)="onClick()" routerLink="/covoiturages">Réserver un covoiturage</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/collaborateur-list">List Collab</a>
+          <a class="nav-link" (click)="onClick()" routerLink="/collaborateur-list">List Collab</a>
         </li>
         <li class="nav-item">
-          <button (click)="onClick()" class="nav-link-spec">Logout </button>
+          <a class="nav-link" (click)="onClick2()" routerLink="/login"> |    Logout</a>
         </li>
       </ul>
     </div>
