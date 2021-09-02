@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'detail/:id', component: CovoiturageDetailComponent},
   { path: 'create-covoiturage', component: CreateCovoiturageComponent},
   { path: 'vehicules', component:VehiculesComponent},
-  { path: 'dashboardcollabs', component: CollaborateurListComponent},
+  { path: 'collaborateur-list', component: CollaborateurListComponent},
   { path: 'vehicule-detail', component: VehiculeDetailComponent}
 ];
 

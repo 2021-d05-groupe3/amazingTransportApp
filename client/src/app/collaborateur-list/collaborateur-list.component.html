@@ -3,7 +3,7 @@
     <!-- Show it when there is no collab -->
     <div class="no-data text-center" *ngIf="collabTable.length == 0">
       <p>There is no collaborateur added yet!</p>
-      <button class="btn btn-outline-primary" routerLink="/create-collab">Add Collaborateur</button>
+      <button class="btn btn-outline-primary" routerLink="#">Add Collaborateur</button>
     </div>
   
     <!-- Collabs list table, it hides when there is no collab -->
@@ -17,7 +17,7 @@
               <th scope="col">User Id</th>
               <th scope="col">Name</th>
               <th scope="col">Email</th>
-              <th scope="col">Action</th>
+              <!--th scope="col">Action</th-->
             </tr>
           </thead>
           <tbody>
@@ -25,11 +25,13 @@
               <td>{{collab.id}}</td>
               <td>{{collab.name}}</td>
               <td>{{collab.email}}</td>
+              <!--
               <td>
                 <button class="btn btn-outline-secondary">Edit</button>
                 &nbsp;
                 <button class="btn btn-danger">Delete</button>
               </td>
+            -->
             </tr>
           </tbody>
         </table>

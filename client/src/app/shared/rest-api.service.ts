@@ -11,7 +11,7 @@ import { RessourceService } from '../services/ressource.service';
 
 export class RestApiService extends RessourceService<Collab>{
   endPoint(): string {
-    return 'afficherCollaborateur';
+    return 'collaborateur';
   }
   
   // Define API
