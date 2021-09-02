@@ -2,6 +2,11 @@ package com.example.disturbingparadox.reservationCovoit;
 
 import java.util.List;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +17,7 @@ public class ReservationCovoitController {
     
     @Autowired
     ReservationCovoitService reservationCovoitService;
+
 
     @GetMapping("/reservationCovoits")
 	public List<ReservationCovoit> afficherLesAnnonces(){
@@ -25,5 +31,6 @@ public class ReservationCovoitController {
 		
 		return reservationCovoitService.addModel(reservationCovoit);
 	}
+
 
 }

@@ -1,0 +1,20 @@
+<h1>
+Détails
+</h1>
+<div *ngIf="covoiturage">
+  <h2>
+      Organisateur: {{covoiturage.collaborateur}}
+  </h2>
+  <h3>
+    <!-- Vehicule: {{covoiturage.vehicleType}} -->
+  </h3>
+  <p>
+    Nombre de passagers: {{covoiturage.id}}
+  </p>
+  <div><span>id: </span>{{covoiturage.id}}</div>
+  <label>
+     <!--  <input [(ngModel)]="covoiturage.id" /> -->
+  </label>
+
+</div>
+

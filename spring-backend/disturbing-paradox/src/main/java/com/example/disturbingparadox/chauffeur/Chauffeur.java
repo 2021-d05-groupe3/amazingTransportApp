@@ -12,7 +12,12 @@ public class Chauffeur extends Collaborateur{
 
     private String driverPicture;
 
-    public Chauffeur() {
+    
+
+    public Chauffeur(String numberLicence, String driverPicture) {
+        super();
+        this.numberLicence = numberLicence;
+        this.driverPicture = driverPicture;
     }
 
     public String getNumberLicence() {

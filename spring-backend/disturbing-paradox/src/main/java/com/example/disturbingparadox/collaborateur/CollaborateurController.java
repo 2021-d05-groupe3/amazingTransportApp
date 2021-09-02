@@ -19,9 +19,7 @@ public class CollaborateurController {
     @GetMapping("/collaborateur/{name}")
     public List<Collaborateur> getCollaborateur(@PathVariable String name) {
 
-        List<Collaborateur> collaborateurs = collaborateurService.getCollaborateur(name);
-        
-        return collaborateurs;
+        return collaborateurService.getCollaborateur(name);        
         
     }
 
